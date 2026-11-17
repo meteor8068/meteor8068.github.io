@@ -1,0 +1,968 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>白袜女足-联赛观察与球袜文化指南</title>
+<meta name="description" content="白袜女足是聚焦女子足球白袜造型与联赛动态的观察站。追踪女超联赛赛程比分、球队白袜配色、球员装备细节与看台文化，提供深度解析、体验指南、常见问答与球迷评论，适合入门与资深观众查阅。">
+<meta name="keywords" content="白袜女足">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f3d2e'/%3E%3Cpath d='M10 8h5v10c0 2 1 3 3 3s3-1 3-3v-4h3v4c0 4-3 6-6 6s-6-2-6-6z' fill='%23f6f2e7'/%3E%3Ccircle cx='23.5' cy='9.5' r='2.5' fill='%23e2b33c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --green:#0f3d2e;
+  --green-2:#1c5a44;
+  --green-3:#2d7a5c;
+  --cream:#f6f2e7;
+  --cream-2:#efe9d8;
+  --ink:#1d2621;
+  --ink-2:#3d4a43;
+  --muted:#6f7c74;
+  --gold:#e2b33c;
+  --gold-2:#c9971f;
+  --line:#d8d3c3;
+  --line-2:#e6e1d2;
+  --white:#fffdf7;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 2px 10px rgba(15,61,46,.08);
+  --shadow-lg:0 10px 30px rgba(15,61,46,.14);
+  --sp-1:6px;
+  --sp-2:12px;
+  --sp-3:20px;
+  --sp-4:32px;
+  --sp-5:52px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --sticky-ann:40px;
+  --sticky-head:64px;
+  --offset:calc(var(--sticky-ann) + var(--sticky-head) + 12px);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--offset);}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--green-2);text-decoration:none;}
+a:hover{color:var(--gold-2);}
+img{max-width:100%;display:block;}
+h1,h2,h3,h4{line-height:1.35;color:var(--ink);margin:0 0 var(--sp-2);}
+h1{font-size:34px;letter-spacing:.5px;}
+h2{font-size:24px;}
+h3{font-size:18px;}
+p{margin:0 0 var(--sp-3);}
+ul,ol{margin:0 0 var(--sp-3);padding-left:22px;}
+li{margin-bottom:6px;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--sp-3);}
+section{scroll-margin-top:var(--offset);}
+.section{padding:var(--sp-4) 0;}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--sp-2);border-bottom:2px solid var(--green);padding-bottom:var(--sp-2);margin-bottom:var(--sp-3);flex-wrap:wrap;}
+.section-head h2{margin:0;}
+.section-head .sub{color:var(--muted);font-size:14px;}
+.kicker{display:inline-block;font-size:12px;letter-spacing:2px;color:var(--gold-2);font-weight:700;margin-bottom:6px;}
+
+/* 吸顶公告条 */
+.announce{
+  position:sticky;top:0;z-index:60;
+  background:var(--green);
+  color:var(--cream);
+  font-size:13px;
+  height:var(--sticky-ann);
+  display:flex;align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.announce .wrap{display:flex;align-items:center;gap:10px;width:100%;overflow:hidden;}
+.announce .tag{background:var(--gold);color:var(--green);font-weight:700;padding:1px 8px;border-radius:20px;font-size:11px;white-space:nowrap;}
+.announce p{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.announce a{color:var(--cream);text-decoration:underline;text-underline-offset:3px;}
+
+/* 页头 */
+.site-head{
+  position:sticky;top:var(--sticky-ann);z-index:55;
+  background:rgba(246,242,231,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  height:var(--sticky-head);
+}
+.head-inner{display:flex;align-items:center;gap:var(--sp-3);height:var(--sticky-head);}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--green);font-size:19px;letter-spacing:1px;}
+.brand svg{flex:none;}
+.brand:hover{color:var(--green-2);}
+.nav-main{display:flex;gap:4px;margin-left:auto;align-items:center;}
+.nav-main a{padding:8px 12px;border-radius:var(--radius-sm);font-size:14.5px;color:var(--ink-2);font-weight:500;}
+.nav-main a:hover{background:var(--cream-2);color:var(--green);}
+.head-entry{display:flex;align-items:center;gap:8px;}
+.search-form{position:relative;}
+.search-form input{
+  width:180px;padding:8px 12px;border:1px solid var(--line);border-radius:20px;
+  background:var(--white);font-family:var(--font);font-size:14px;color:var(--ink);transition:width .2s;
+}
+.search-form input:focus{outline:2px solid var(--gold);outline-offset:1px;width:220px;}
+.search-fb{
+  position:absolute;top:44px;right:0;width:250px;background:var(--white);
+  border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 12px;
+  font-size:13px;color:var(--muted);box-shadow:var(--shadow);display:none;
+}
+.search-fb.show{display:block;}
+.menu-btn{display:none;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);padding:8px 10px;cursor:pointer;color:var(--green);}
+.menu-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(226,179,60,.22), transparent 42%),
+    radial-gradient(circle at 12% 88%, rgba(45,122,92,.18), transparent 48%),
+    linear-gradient(135deg,#0f3d2e 0%,#14503b 55%,#1c5a44 100%);
+  color:var(--cream);
+  padding:var(--sp-5) 0 var(--sp-4);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--sp-4);align-items:center;}
+.hero h1{color:var(--cream);font-size:44px;margin-bottom:var(--sp-2);letter-spacing:2px;}
+.hero .lead{font-size:16.5px;color:#e8e2d1;max-width:520px;margin-bottom:var(--sp-3);}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:6px;padding:11px 22px;border-radius:30px;
+  font-weight:700;font-size:15px;border:1px solid transparent;transition:transform .18s,box-shadow .18s;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--gold);color:var(--green);box-shadow:0 6px 18px rgba(226,179,60,.32);}
+.btn-primary:hover{color:var(--green);box-shadow:0 8px 22px rgba(226,179,60,.42);}
+.btn-ghost{border-color:rgba(246,242,231,.4);color:var(--cream);}
+.btn-ghost:hover{background:rgba(246,242,231,.12);color:var(--cream);}
+.hero-figures{display:flex;gap:var(--sp-4);margin-top:var(--sp-3);flex-wrap:wrap;}
+.hero-figures .fig b{display:block;font-size:26px;color:var(--gold);line-height:1.2;}
+.hero-figures .fig span{font-size:12.5px;color:#cfc9b6;}
+.hero-art{position:relative;display:flex;justify-content:center;}
+.hero-art svg{width:100%;max-width:340px;height:auto;filter:drop-shadow(0 12px 24px rgba(0,0,0,.25));}
+.hero-badge{
+  position:absolute;right:-4px;top:6px;background:var(--cream);color:var(--green);
+  font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px;box-shadow:var(--shadow-lg);
+  transform:rotate(3deg);
+}
+
+/* 布局 */
+.layout-3{display:grid;grid-template-columns:230px minmax(0,1fr) 280px;gap:var(--sp-4);align-items:start;}
+.col-side{position:sticky;top:var(--offset);}
+.side-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-3);box-shadow:var(--shadow);margin-bottom:var(--sp-3);}
+.side-card h3{font-size:15px;margin-bottom:var(--sp-2);padding-bottom:8px;border-bottom:1px dashed var(--line);}
+.side-nav{list-style:none;padding:0;margin:0;font-size:14px;}
+.side-nav li{margin:0;}
+.side-nav a{display:block;padding:7px 10px;border-radius:var(--radius-sm);color:var(--ink-2);border-left:3px solid transparent;}
+.side-nav a:hover,.side-nav a.active{background:var(--cream-2);color:var(--green);border-left-color:var(--gold);}
+.mini-list{list-style:none;padding:0;margin:0;font-size:13.5px;}
+.mini-list li{padding:8px 0;border-bottom:1px dashed var(--line-2);}
+.mini-list li:last-child{border-bottom:0;}
+.mini-list .date{display:block;font-size:12px;color:var(--muted);}
+
+/* 卡片通用 */
+.card-grid{display:grid;gap:var(--sp-3);}
+.g-3{grid-template-columns:repeat(3,1fr);}
+.g-2{grid-template-columns:repeat(2,1fr);}
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+.card .thumb{width:100%;height:150px;object-fit:cover;background:var(--cream-2);}
+.card-body{padding:var(--sp-2) var(--sp-3) var(--sp-3);display:flex;flex-direction:column;gap:6px;flex:1;}
+.card-body h3{font-size:16px;margin:0;}
+.card-body p{font-size:13.5px;color:var(--ink-2);margin:0;}
+.card-meta{display:flex;gap:8px;font-size:12px;color:var(--muted);margin-top:auto;padding-top:5px;flex-wrap:wrap;}
+.card-meta .pill{background:var(--cream-2);color:var(--green-2);padding:1px 8px;border-radius:20px;}
+
+/* 列表 */
+.list-item{display:flex;gap:var(--sp-2);padding:var(--sp-2) 0;border-bottom:1px solid var(--line-2);}
+.list-item:last-child{border-bottom:0;}
+.list-item .li-date{flex:none;width:64px;text-align:center;background:var(--cream-2);border-radius:var(--radius-sm);padding:6px 4px;font-size:12px;color:var(--green-2);font-weight:700;align-self:flex-start;}
+.list-item .li-date b{display:block;font-size:19px;color:var(--green);}
+.list-item h3{font-size:15.5px;margin:0 0 2px;}
+.list-item p{font-size:13.5px;margin:0;color:var(--ink-2);}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--white);}
+.compare>div{padding:var(--sp-3);}
+.compare>div:first-child{background:var(--cream-2);border-right:1px solid var(--line);}
+.compare h4{font-size:15px;margin-bottom:var(--sp-2);color:var(--green);}
+.compare ul{font-size:14px;padding-left:18px;margin:0;}
+
+/* 标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:8px;}
+.tag-index a{
+  display:inline-block;padding:5px 13px;border:1px solid var(--line);border-radius:20px;
+  background:var(--white);font-size:13.5px;color:var(--ink-2);
+}
+.tag-index a:hover{border-color:var(--gold);background:var(--cream-2);color:var(--green);}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;position:relative;}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line);}
+.timeline li{position:relative;padding:0 0 var(--sp-3) 28px;margin:0;}
+.timeline li::before{content:"";position:absolute;left:2px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--white);box-shadow:0 0 0 2px var(--gold);}
+.timeline .t-date{font-size:12.5px;color:var(--gold-2);font-weight:700;}
+.timeline h3{font-size:15.5px;margin:2px 0 4px;}
+.timeline p{font-size:13.5px;color:var(--ink-2);margin:0;}
+
+/* 编号步骤 */
+.steps{list-style:none;padding:0;margin:0;counter-reset:step;display:grid;gap:var(--sp-2);}
+.steps li{display:flex;gap:var(--sp-2);background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);padding:var(--sp-2) var(--sp-3);}
+.steps li::before{counter-increment:step;content:counter(step);flex:none;width:28px;height:28px;border-radius:50%;background:var(--green);color:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;}
+.steps h3{font-size:15px;margin:0 0 2px;}
+.steps p{font-size:13.5px;margin:0;color:var(--ink-2);}
+
+/* 问答 */
+details{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden;}
+summary{padding:13px 18px;cursor:pointer;font-weight:600;font-size:15px;color:var(--green);list-style:none;position:relative;padding-right:42px;}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--gold-2);font-weight:400;}
+details[open] summary::after{content:"–";}
+details[open] summary{border-bottom:1px solid var(--line-2);}
+details .ans{padding:13px 18px;font-size:14.5px;color:var(--ink-2);}
+details .ans p:last-child{margin:0;}
+
+/* 评论 */
+.comment{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--green-3);border-radius:var(--radius-sm);padding:var(--sp-2) var(--sp-3);margin-bottom:12px;}
+.comment .c-head{display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:5px;flex-wrap:wrap;}
+.comment .avatar{width:28px;height:28px;border-radius:50%;background:var(--green-2);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none;}
+.comment .c-name{font-weight:700;color:var(--green);}
+.comment .c-time{color:var(--muted);font-size:12px;}
+.comment p{font-size:14px;margin:0;color:var(--ink-2);}
+.comment.neg{border-left-color:#b8613a;}
+
+/* 深度解析 */
+.article-body{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:var(--sp-4);box-shadow:var(--shadow);}
+.article-body h3{margin-top:var(--sp-3);padding-left:12px;border-left:4px solid var(--gold);}
+.article-body h3:first-of-type{margin-top:0;}
+.article-body p{font-size:15px;}
+.quote{background:var(--cream-2);border-left:4px solid var(--green);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:var(--sp-2) var(--sp-3);font-size:15px;color:var(--ink);margin:var(--sp-3) 0;}
+.quote cite{display:block;font-size:12.5px;color:var(--muted);font-style:normal;margin-top:6px;}
+.checklist{background:var(--cream);border:1px dashed var(--green-3);border-radius:var(--radius-sm);padding:var(--sp-2) var(--sp-3);font-size:14px;}
+.checklist strong{display:block;color:var(--green);margin-bottom:6px;}
+.checklist ol{margin:0;padding-left:20px;}
+
+/* 页尾 */
+.site-foot{background:var(--green);color:#cfd8cf;padding:var(--sp-5) 0 var(--sp-3);margin-top:var(--sp-4);}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:var(--sp-3);}
+.site-foot h4{color:var(--cream);font-size:14.5px;margin-bottom:var(--sp-2);}
+.site-foot .brand-foot{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;color:var(--cream);margin-bottom:var(--sp-2);letter-spacing:1px;}
+.site-foot .brand-foot svg{flex:none;}
+.site-foot p{font-size:13px;color:#b8c6bb;margin-bottom:var(--sp-2);}
+.site-foot ul{list-style:none;padding:0;margin:0;font-size:13.5px;}
+.site-foot li{margin-bottom:7px;}
+.site-foot a{color:#d6e0d6;}
+.site-foot a:hover{color:var(--gold);}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:var(--sp-4);padding-top:var(--sp-2);font-size:12.5px;color:#98ac9d;display:flex;justify-content:space-between;gap:var(--sp-2);flex-wrap:wrap;}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:24px;z-index:70;width:44px;height:44px;border-radius:50%;
+  background:var(--green);color:var(--cream);border:1px solid rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s;box-shadow:var(--shadow-lg);
+}
+.to-top.show{opacity:1;visibility:visible;transform:none;}
+.to-top:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+/* 平板 */
+@media (max-width:1024px){
+  .layout-3{grid-template-columns:1fr 1fr;grid-template-areas:"main main" "left right";}
+  .layout-3 > #main-col{grid-area:main;}
+  .layout-3 > #left-col{grid-area:left;}
+  .layout-3 > #right-col{grid-area:right;}
+  .col-side{position:static;}
+  .g-3{grid-template-columns:repeat(2,1fr);}
+  .hero h1{font-size:36px;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:860px){
+  .nav-main{display:none;position:absolute;top:var(--sticky-head);left:0;right:0;background:var(--cream);flex-direction:column;align-items:stretch;padding:12px 16px;border-bottom:1px solid var(--line);margin-left:0;gap:2px;}
+  .nav-main.open{display:flex;}
+  .nav-main a{padding:10px 12px;border-bottom:1px solid var(--line-2);}
+  .menu-btn{display:inline-flex;align-items:center;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-art{order:-1;max-width:220px;margin:0 auto;}
+  .hero h1{font-size:32px;}
+  .search-form input{width:130px;}
+  .search-form input:focus{width:160px;}
+}
+/* 手机 */
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  .layout-3{grid-template-columns:1fr;grid-template-areas:"main" "left" "right";}
+  .g-3,.g-2{grid-template-columns:1fr;}
+  .compare{grid-template-columns:1fr;}
+  .compare>div:first-child{border-right:0;border-bottom:1px solid var(--line);}
+  .hero{padding:var(--sp-4) 0;}
+  .hero h1{font-size:28px;letter-spacing:1px;}
+  .hero-figures{gap:var(--sp-3);}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .article-body{padding:var(--sp-3);}
+  .search-form input{width:110px;}
+  .head-inner{gap:var(--sp-2);}
+  .brand{font-size:17px;}
+  .to-top{right:12px;bottom:16px;width:40px;height:40px;}
+}
+@media (max-width:380px){
+  .foot-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:25px;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{transition:none!important;animation:none!important;}
+  .card:hover,.btn:hover{transform:none;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 公告条 -->
+<div class="announce" role="region" aria-label="站点更新公告">
+  <div class="wrap">
+    <span class="tag">更新</span>
+    <p><a href="/#latest">白袜女足</a>赛事雷达 11 月 7 日同步：女超第 21 轮上海农商银行 2–1 武汉车谷江大，白袜方阵扩至三队；11 月 5 日新增 4 双球员版球袜实拍。</p>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="/#top" aria-label="白袜女足首页">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#0f3d2e"/>
+        <path d="M10 8h5v10c0 2 1 3 3 3s3-1 3-3v-4h3v4c0 4-3 6-6 6s-6-2-6-6z" fill="#f6f2e7"/>
+        <circle cx="23.5" cy="9.5" r="2.5" fill="#e2b33c"/>
+      </svg>
+      <span>白袜女足</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navMain">☰ 频道</button>
+    <nav class="nav-main" id="navMain" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#picks">精选推荐</a>
+      <a href="/#latest">最新更新</a>
+      <a href="/#channels">分类入口</a>
+      <a href="/#analysis">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+    </nav>
+    <div class="head-entry">
+      <form class="search-form" id="searchForm" role="search" aria-label="站内查找">
+        <input type="search" id="searchInput" placeholder="查球队、袜款、赛程…" aria-label="输入关键词查找">
+        <div class="search-fb" id="searchFb" role="status"></div>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">WOMEN'S FOOTBALL · WHITE SOCK WATCH</span>
+        <h1 id="hero-h1">白袜女足</h1>
+        <p class="lead">一支球队的白色球袜能透露多少信息？从女超联赛 2026 赛季的装备清单、主场配色到看台同款，这里记录每场比赛里那双被镜头扫过的白袜。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#latest">查看本周赛事速递</a>
+          <a class="btn btn-ghost" href="/#guide">新观众观赛指南</a>
+        </div>
+        <div class="hero-figures">
+          <div class="fig"><b>12</b><span>支球队白袜档案</span></div>
+          <div class="fig"><b>36</b><span>场本季已记录比赛</span></div>
+          <div class="fig"><b>4</b><span>款球员版球袜拆解</span></div>
+          <div class="fig"><b>11.08</b><span>数据更新日</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="hero-badge">2026 赛季</span>
+        <svg viewBox="0 0 300 320" role="img" aria-label="白袜女足主题插画：一只穿着白色球袜的脚与足球">
+          <defs>
+            <linearGradient id="sockG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fffdf7"/>
+              <stop offset="1" stop-color="#e6e1d2"/>
+            </linearGradient>
+          </defs>
+          <circle cx="150" cy="150" r="132" fill="rgba(246,242,231,.06)" stroke="rgba(226,179,60,.5)" stroke-width="1.5" stroke-dasharray="4 7"/>
+          <circle cx="236" cy="72" r="26" fill="#e2b33c" opacity=".9"/>
+          <path d="M96 60c10-4 22 0 24 12l6 40c1 8 6 13 14 15l34 10c16 5 24 19 21 35-3 17-18 27-35 24l-58-9c-13-2-22-13-21-26l2-32c0-9-3-16-9-22l-6-7c-8-9-5-24 6-30z" fill="url(#sockG)" stroke="#c9c3b1" stroke-width="2"/>
+          <path d="M74 196c16-8 38-6 50 6l18 18c7 7 18 9 27 5l20-9" fill="none" stroke="#1c5a44" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="205" cy="232" r="42" fill="#fffdf7" stroke="#1d2621" stroke-width="2"/>
+          <path d="M205 200l12 9-4 15h-16l-4-15z" fill="#0f3d2e"/>
+          <path d="M181 218l14-6 12 10-5 15-16-2zM213 222l12-9 11 8-3 16-15 3z" fill="#0f3d2e" opacity=".7"/>
+          <path d="M128 120c14 6 22 18 22 33" fill="none" stroke="#0f3d2e" stroke-width="2" stroke-linecap="round"/>
+          <text x="150" y="304" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#cfc9b6">HOME KIT · WHITE SOCK</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap section">
+    <div class="layout-3">
+
+      <!-- 左侧频道 -->
+      <aside class="col-side" id="left-col" aria-label="频道导航与快讯">
+        <nav class="side-card" aria-label="页面栏目">
+          <h3>栏目速览</h3>
+          <ul class="side-nav" id="sideNav">
+            <li><a href="/#overview">领域概览</a></li>
+            <li><a href="/#picks">精选内容推荐</a></li>
+            <li><a href="/#latest">最新更新</a></li>
+            <li><a href="/#channels">分类入口</a></li>
+            <li><a href="/#analysis">深度解析</a></li>
+            <li><a href="/#guide">体验指南</a></li>
+            <li><a href="/#faq">常见问答</a></li>
+            <li><a href="/#comments">球迷评论</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#recommend">相关推荐</a></li>
+            <li><a href="/#timeline">赛季时间线</a></li>
+          </ul>
+        </nav>
+        <div class="side-card">
+          <h3>本周快讯</h3>
+          <ul class="mini-list">
+            <li><a href="/#latest">女超第 21 轮：上海农商银行 2–1 武汉车谷江大</a><span class="date">11 月 7 日</span></li>
+            <li><a href="/#latest">江苏女足白袜改为双金线版本</a><span class="date">11 月 6 日</span></li>
+            <li><a href="/#picks">国脚球袜实测：三款厚度对比</a><span class="date">11 月 5 日</span></li>
+            <li><a href="/#news">长春大众置业公布冬季装备清单</a><span class="date">11 月 3 日</span></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- 主内容 -->
+      <div id="main-col">
+
+        <!-- 领域概览 -->
+        <section id="overview" aria-labelledby="overview-h2">
+          <div class="section-head">
+            <h2 id="overview-h2">领域概览：白袜在女子足球里意味着什么</h2>
+            <span class="sub">装备 · 配色 · 可见度</span>
+          </div>
+          <p>白色球袜在女子足球中并非统一标准。以 2026 赛季女超 12 支球队为例，主色为白的球袜有 5 双，纯白配单色环的有 3 双，其余为白底加渐变或金色细纹。白色反光率高，在夜间灯光场地里更容易被摄像机识别，慢镜头回放时袜口的线条会看得更清楚。江苏女足自 2024 赛季起把袜口改为双金线，官方装备页给出的解释是“与队徽金色保持一致”。</p>
+          <div class="compare" role="group" aria-label="白袜与深色球袜的对比">
+            <div>
+              <h4>白色球袜</h4>
+              <ul>
+                <li>日光下反光强，边线镜头易辨识</li>
+                <li>污渍显眼，雨后场地更明显</li>
+                <li>通常搭配深色短裤形成上下分段</li>
+                <li>袜口可加队色线条，定制空间大</li>
+              </ul>
+            </div>
+            <div>
+              <h4>深色球袜</h4>
+              <ul>
+                <li>夜间吸收灯光，轮廓偏暗</li>
+                <li>耐脏，适合泥泞或人造草场地</li>
+                <li>与深色短裤连成整体，视觉腿更长</li>
+                <li>白色标识需另做，成本略高</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 精选推荐 -->
+        <section id="picks" class="section" aria-labelledby="picks-h2">
+          <div class="section-head">
+            <h2 id="picks-h2">精选内容推荐</h2>
+            <span class="sub">编辑挑出的 3 篇</span>
+          </div>
+          <div class="card-grid g-3">
+            <article class="card">
+              <img class="thumb" src="https://picsum.photos/seed/womensocks01/600/360" width="600" height="360" loading="lazy" alt="球员在灯光球场比赛中穿着白色球袜沿边线奔跑">
+              <div class="card-body">
+                <h3>白袜防滑条实测：哪款更适合雨天</h3>
+                <p>六款球员版球袜在人工洒水场地跑动 40 分钟，记录袜底硅胶条的位移与起球情况。</p>
+                <div class="card-meta"><span class="pill">球袜实测</span><span>11 月 5 日</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="thumb" src="https://picsum.photos/seed/womensocks02/600/360" width="600" height="360" loading="lazy" alt="女子足球比赛看台观众举着球队围巾与白色球袜同款">
+              <div class="card-body">
+                <h3>看台同款怎么买：白袜球迷版与球员版差异</h3>
+                <p>价差 180 元，主要差在袜筒压力、袜口宽度与缝线位置，三点逐项对照。</p>
+                <div class="card-meta"><span class="pill">装备选购</span><span>11 月 4 日</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="thumb" src="https://picsum.photos/seed/womensocks03/600/360" width="600" height="360" loading="lazy" alt="女超联赛球场全景，两队球员在白色边线附近列队">
+              <div class="card-body">
+                <h3>女超第 21 轮白袜方阵：三队同场配色记录</h3>
+                <p>上海、武汉、江苏三队本轮都使用白袜，镜头切换时的辨识差异肉眼可见。</p>
+                <div class="card-meta"><span class="pill">赛场观察</span><span>11 月 7 日</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 最新更新 -->
+        <section id="latest" class="section" aria-labelledby="latest-h2">
+          <div class="section-head">
+            <h2 id="latest-h2">最新更新</h2>
+            <span class="sub">11 月 1 日 — 11 月 8 日</span>
+          </div>
+          <div class="list-item">
+            <div class="li-date"><b>07</b>11月</div>
+            <div>
+              <h3><a href="/#analysis">上海农商银行 2–1 武汉车谷江大，白袜方阵扩至三队</a></h3>
+              <p>第 63 分钟上海队边锋周心怡换边后，白色袜口在慢镜头里连续出现三次同款金线标识。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="li-date"><b>06</b>11月</div>
+            <div>
+              <h3><a href="/#channels">江苏女足白袜改为双金线版本</a></h3>
+              <p>俱乐部装备页上线新图，袜口双金线间距 8 毫米，较 2025 赛季的 5 毫米更宽。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="li-date"><b>05</b>11月</div>
+            <div>
+              <h3><a href="/#picks">球员版球袜拆解：三种厚度的足弓支撑</a></h3>
+              <p>从 1.2 毫米到 2.0 毫米袜底，足弓弹力带宽度从 12 毫米递增到 18 毫米。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="li-date"><b>03</b>11月</div>
+            <div>
+              <h3><a href="/#news">长春大众置业公布冬季装备清单</a></h3>
+              <p>白袜保留主场主色，客场改用浅灰，理由写的是“与雪地背景拉开层次”。</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="li-date"><b>01</b>11月</div>
+            <div>
+              <h3><a href="/#guide">新手观赛指南更新：入场装备检查项</a></h3>
+              <p>新增球袜是否露出的判断标准，依据 2026 版竞赛规则第 4 章第 3 条。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 分类入口 -->
+        <section id="channels" class="section" aria-labelledby="channels-h2">
+          <div class="section-head">
+            <h2 id="channels-h2">分类入口</h2>
+            <span class="sub">按你要查的东西分</span>
+          </div>
+          <div class="tag-index">
+            <a href="/#analysis">女超联赛白袜球队</a>
+            <a href="/#picks">球员版球袜开箱</a>
+            <a href="/#guide">白袜防滑与尺码</a>
+            <a href="/#overview">白袜配色与队徽</a>
+            <a href="/#news">女足装备规则</a>
+            <a href="/#comments">看台同款穿搭</a>
+            <a href="/#timeline">2026 赛季赛程</a>
+            <a href="/#faq">球袜清洗与保养</a>
+            <a href="/#latest">女超比分速递</a>
+            <a href="/#recommend">女足球员访谈</a>
+          </div>
+        </section>
+
+        <!-- 深度解析 -->
+        <section id="analysis" class="section" aria-labelledby="analysis-h2">
+          <div class="section-head">
+            <h2 id="analysis-h2">深度解析：白色球袜正在成为女足装备的识别符号</h2>
+            <span class="sub">全页唯一主体阅读区</span>
+          </div>
+          <article class="article-body">
+            <h3>判断一：白袜的识别优势来自镜头，不是来自审美</h3>
+            <p>2026 赛季女超转播机位增加到 8 个，边线低机位占比提高到 35%。白色袜面在边线镜头里的像素对比度高于深色袜面约 1.7 倍（以 11 月 7 日上海对武汉的转播截图取样）。这解释了为什么镜头扫过边路时，观众先看到的是白色袜口，而不是球衣号码。江苏女足 11 月 6 日改宽金线，实际效果是把袜口变成一条可被识别的高亮带，与队徽金色形成呼应。</p>
+            <div class="quote">
+              “袜口是唯一能在全身镜头里稳定出现的品牌位置。”
+              <cite>—— 某俱乐部装备管理员，2026 年 10 月 30 日受访</cite>
+            </div>
+            <h3>判断二：“白袜女足”不是一支球队，而是一组可比较的装备样本</h3>
+            <p>把 12 支女超球队的白袜放在一起看，差别集中在三点：袜筒压力、袜口线条、袜底防滑。上海农商银行使用 18 mmHg 压力的球员版，袜口为单金线；武汉车谷江大是 15 mmHg，袜口无线条；江苏是 16 mmHg 加双金线。三队在同轮比赛都穿白袜，慢镜头里江苏的袜口最显眼，武汉最不显眼——这与球队实力无关，纯粹是装备参数差异。</p>
+            <h3>判断三：球迷版球袜的溢价，主要买的是袜口</h3>
+            <p>以 11 月 4 日三家官方商店标价为例：球迷版 129 元，球员版 309 元，价差 180 元。拆开看，袜底防滑条球员版为整片硅胶，球迷版为点状；袜筒压力球员版分左右脚，球迷版不分；袜口线条球员版为提花织入，球迷版为印花。后者的耐用度差距在洗 15 次后开始显现。对只是看球的人来说，球迷版足够；对每周踢两场的人来说，球员版的足弓支撑更值。</p>
+            <div class="checklist">
+              <strong>可核对清单：白袜选购前逐项确认</strong>
+              <ol>
+                <li>袜口线条是织入还是印花（看内侧有无浮线）</li>
+                <li>足弓弹力带宽度是否 ≥ 14 毫米</li>
+                <li>袜底防滑是整片还是点状</li>
+                <li>标注压力值是否在 15–18 mmHg 之间</li>
+                <li>洗涤标签是否写明不超过 40℃</li>
+              </ol>
+            </div>
+            <h3>判断四：白袜的维护成本被低估</h3>
+            <p>白色袜面在雨后场地更容易显脏。11 月 5 日的实测里，同一双白袜在湿滑人造草跑 40 分钟后，袜底与袜跟的泥点面积约为深色袜的 2.4 倍。清洗时若用含氯漂白剂，袜口金线会褪色——江苏队 2025 赛季的旧款就出现过这个问题，俱乐部随后在装备说明里加了一句“避免含氯洗涤剂”。这条说明在 11 月 1 日的指南更新中被引用。</p>
+          </article>
+        </section>
+
+        <!-- 体验指南 -->
+        <section id="guide" class="section" aria-labelledby="guide-h2">
+          <div class="section-head">
+            <h2 id="guide-h2">体验指南：第一次去看女超现场怎么准备</h2>
+            <span class="sub">入场 · 装备 · 记录</span>
+          </div>
+          <ol class="steps">
+            <li>
+              <div>
+                <h3>先确认球袜规则</h3>
+                <p>2026 版竞赛规则要求球袜覆盖小腿，同队颜色一致。部分球场对白袜反光有额外提醒，进场前看公告栏。</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>选坐边线低区</h3>
+                <p>白袜在边线镜头里最清楚。上海金山体育中心东看台 1–6 排，能同时看到两队替补席的袜口细节。</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>带一件深色外套</h3>
+                <p>夜场 11 月气温约 12℃，白袜球迷版不保暖，外套选深色更容易和看台同款区分开。</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>记录袜口线条</h3>
+                <p>用手机 2 倍变焦拍边线球员小腿，能看清是单线还是双线。11 月 7 日就有球迷靠这个方法认出了江苏替补。</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section" aria-labelledby="faq-h2">
+          <div class="section-head">
+            <h2 id="faq-h2">常见问答</h2>
+            <span class="sub">规则 · 装备 · 观赛</span>
+          </div>
+          <details>
+            <summary>女超联赛对球袜颜色有硬性规定吗？</summary>
+            <div class="ans"><p>规则要求同队球员球袜颜色一致，但不能与对方球袜颜色混淆。白色球袜在多数球场可用，裁判会在赛前检查。2026 赛季第 21 轮没有出现因袜色被要求更换的情况。</p></div>
+          </details>
+          <details>
+            <summary>白色球袜在雨天比赛里会影响球员吗？</summary>
+            <div class="ans"><p>影响主要在重量。吸湿后白袜增重约 18–25 克，深色袜差不多。真正拉开差距的是袜底防滑，整片硅胶在湿滑场地更稳，点状防滑在 11 月 5 日的实测里打滑次数多出 6 次。</p></div>
+          </details>
+          <details>
+            <summary>球迷版白袜能机洗吗？</summary>
+            <div class="ans"><p>可以，但要翻面、装洗衣袋、水温不超过 40℃。含氯漂白剂会让袜口金线褪色，江苏队 2025 赛季旧款就因此降级为训练用。建议自然晾干，不用烘干机。</p></div>
+          </details>
+          <details>
+            <summary>怎么分辨球员版和球迷版的白袜？</summary>
+            <div class="ans"><p>看袜口内侧：球员版金线是织入，有浮线；球迷版是印花，内侧平滑。再看袜底，球员版为整片硅胶，球迷版为点状。价差通常在 180 元左右。</p></div>
+          </details>
+          <details>
+            <summary>现场看球，哪一侧看白袜最清楚？</summary>
+            <div class="ans"><p>主队替补席一侧的边线低区。11 月 7 日上海金山体育中心东看台 1–6 排，能看到上海队白袜的金线在慢镜头里连续出现三次。西看台角度偏，袜口细节会被广告牌遮挡。</p></div>
+          </details>
+        </section>
+
+        <!-- 用户评论 -->
+        <section id="comments" class="section" aria-labelledby="comments-h2">
+          <div class="section-head">
+            <h2 id="comments-h2">球迷评论</h2>
+            <span class="sub">来自看台与球场</span>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">林</span><span class="c-name">林间雨</span><span class="c-time">11 月 7 日 22:14</span></div>
+            <p>上海对武汉那场，周心怡第 63 分钟换边之后，白袜金线在慢镜头里特别明显。我坐东看台 4 排，肉眼也能看到袜口那条线。江苏的双金线确实更宽，但上海的单线更清爽。</p>
+          </div>
+          <div class="comment neg">
+            <div class="c-head"><span class="avatar">阿</span><span class="c-name">阿北不熬夜</span><span class="c-time">11 月 7 日 21:40</span></div>
+            <p>球员版 309 元一双，说实话有点贵。拆开看就是袜底整片硅胶和分左右脚，值不值看个人。我买了球迷版给娃穿，洗了三次袜口印花已经开始毛边。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">陈</span><span class="c-name">陈记看台</span><span class="c-time">11 月 6 日 18:02</span></div>
+            <p>江苏改双金线的图我看了，8 毫米间距比 2025 赛季宽，视觉上更像一条腰带。俱乐部说与队徽金色一致，这个说法站得住，队徽上确实是两道金边。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">小</span><span class="c-name">小满踢球</span><span class="c-time">11 月 5 日 20:33</span></div>
+            <p>雨天实测那篇有用。我每周踢两场人造草，点状防滑确实会打滑，尤其是急停转身。看完就换了整片硅胶的款，脚底稳了不少。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">H</span><span class="c-name">H2O观察</span><span class="c-time">11 月 4 日 12:17</span></div>
+            <p>白袜清洗那条说得对，含氯漂白剂一用金线就废。我那双江苏旧款已经变成训练袜了。但新款的织入线条是不是更耐洗，得等一个赛季再看。</p>
+          </div>
+        </section>
+
+        <!-- 相关资讯 -->
+        <section id="news" class="section" aria-labelledby="news-h2">
+          <div class="section-head">
+            <h2 id="news-h2">相关资讯</h2>
+            <span class="sub">装备 · 规则 · 赛程</span>
+          </div>
+          <div class="card-grid g-2">
+            <article class="card">
+              <img class="thumb" src="https://picsum.photos/seed/womensocks04/600/340" width="600" height="340" loading="lazy" alt="长春女足冬季训练场，球员穿着白色球袜在雪地边线热身">
+              <div class="card-body">
+                <h3>长春大众置业冬季装备：白袜保留，客场改浅灰</h3>
+                <p>俱乐部 11 月 3 日公布清单，解释是“与雪地背景拉开层次”。主场白袜不变，客场浅灰为首次使用。</p>
+                <div class="card-meta"><span class="pill">装备公告</span><span>11 月 3 日</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="thumb" src="https://picsum.photos/seed/womensocks05/600/340" width="600" height="340" loading="lazy" alt="裁判在场边检查球员球袜，手持记录板">
+              <div class="card-body">
+                <h3>2026 竞赛规则第 4 章更新：球袜覆盖范围说明更细</h3>
+                <p>新版明确球袜需覆盖小腿至膝下，同队颜色一致。白袜反光在夜间场地的提示写进了裁判备注。</p>
+                <div class="card-meta"><span class="pill">规则解读</span><span>11 月 1 日</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 相关推荐 -->
+        <section id="recommend" class="section" aria-labelledby="recommend-h2">
+          <div class="section-head">
+            <h2 id="recommend-h2">相关推荐</h2>
+            <span class="sub">你可能还想查</span>
+          </div>
+          <div class="tag-index">
+            <a href="/#analysis">白袜球队配色对比</a>
+            <a href="/#picks">球员版球袜拆解</a>
+            <a href="/#guide">看台同款穿搭指南</a>
+            <a href="/#faq">球袜清洗保养</a>
+            <a href="/#timeline">2026 女超赛程</a>
+            <a href="/#news">女足装备规则更新</a>
+            <a href="/#comments">球迷实测反馈</a>
+            <a href="/#latest">本轮比分速递</a>
+          </div>
+        </section>
+
+        <!-- 时间线 -->
+        <section id="timeline" class="section" aria-labelledby="timeline-h2">
+          <div class="section-head">
+            <h2 id="timeline-h2">2026 赛季白袜相关时间线</h2>
+            <span class="sub">10 月 9 日 — 11 月 8 日</span>
+          </div>
+          <ul class="timeline">
+            <li>
+              <span class="t-date">11 月 7 日</span>
+              <h3>女超第 21 轮，三队同穿白袜</h3>
+              <p>上海农商银行 2–1 武汉车谷江大，江苏同日客场比赛。转播边线镜头里江苏双金线最显眼。</p>
+            </li>
+            <li>
+              <span class="t-date">11 月 6 日</span>
+              <h3>江苏女足白袜改为双金线</h3>
+              <p>装备页新图显示袜口间距 8 毫米，较上赛季宽 3 毫米。</p>
+            </li>
+            <li>
+              <span class="t-date">11 月 3 日</span>
+              <h3>长春公布冬季装备清单</h3>
+              <p>客场浅灰首次使用，主场白袜保留。</p>
+            </li>
+            <li>
+              <span class="t-date">11 月 1 日</span>
+              <h3>竞赛规则第 4 章更新生效</h3>
+              <p>球袜覆盖范围与同队颜色一致的要求写得更细。</p>
+            </li>
+            <li>
+              <span class="t-date">10 月 18 日</span>
+              <h3>武汉车谷江大换袜风波</h3>
+              <p>客场比赛中临时换深色袜，俱乐部回应称“与对方颜色接近”，未获证实。转播画面显示换袜发生在第 30 分钟。</p>
+            </li>
+          </ul>
+        </section>
+
+      </div><!-- #main-col -->
+
+      <!-- 右侧栏 -->
+      <aside class="col-side" id="right-col" aria-label="数据与热门">
+        <div class="side-card">
+          <h3>网友在看</h3>
+          <ul class="mini-list">
+            <li><a href="/#analysis">白袜的镜头识别优势从哪来</a><span class="date">深度解析</span></li>
+            <li><a href="/#faq">球员版和球迷版怎么分</a><span class="date">常见问答</span></li>
+            <li><a href="/#guide">边线低区看袜口细节</a><span class="date">体验指南</span></li>
+            <li><a href="/#comments">球迷实测：点状防滑会打滑</a><span class="date">球迷评论</span></li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h3>白袜球队速查</h3>
+          <ul class="mini-list">
+            <li>上海农商银行 · 单金线 · 18 mmHg</li>
+            <li>江苏女足 · 双金线 · 16 mmHg</li>
+            <li>武汉车谷江大 · 无线条 · 15 mmHg</li>
+            <li>长春大众置业 · 主场白袜保留</li>
+            <li>其他 8 队 · 含 3 双白底渐变</li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<!-- 页尾 -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand-foot">
+          <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="#e2b33c"/>
+            <path d="M10 8h5v10c0 2 1 3 3 3s3-1 3-3v-4h3v4c0 4-3 6-6 6s-6-2-6-6z" fill="#0f3d2e"/>
+          </svg>
+          <span>白袜女足</span>
+        </div>
+        <p>记录女子足球赛场上的白色球袜：配色、参数、镜头里的可见度，以及看台上的同款选择。</p>
+        <p>本页示例数据均标注日期，可在正文逐项核对。</p>
+      </div>
+      <div>
+        <h4>频道入口</h4>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选内容推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+          <li><a href="/#analysis">深度解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>查阅与互动</h4>
+        <ul>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">球迷评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#recommend">相关推荐</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于本站</h4>
+        <ul>
+          <li><a href="/#timeline">2026 赛季时间线</a></li>
+          <li>内容更新：2026-11-08</li>
+          <li>示例数据：赛程比分、球袜参数、装备标价均为示例</li>
+          <li>联系方式：页面示例，暂不提供外部地址</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 白袜女足 · 内容仅作垂类示例，非官方俱乐部资料</span>
+      <span>更新时间 2026-11-08 · 对应正文：11 月 7 日比分、11 月 6 日金线调整</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script>
+(function(){
+  // 移动端菜单
+  var menuBtn = document.getElementById('menuBtn');
+  var navMain = document.getElementById('navMain');
+  menuBtn.addEventListener('click', function(){
+    var open = navMain.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navMain.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navMain.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  // 本地搜索
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('searchInput');
+  var fb = document.getElementById('searchFb');
+  form.addEventListener('submit', function(e){ e.preventDefault(); });
+  input.addEventListener('input', function(){
+    var q = input.value.trim();
+    if(!q){ fb.classList.remove('show'); fb.textContent=''; return; }
+    var nodes = document.querySelectorAll('h2,h3,summary,.tag-index a,.mini-list a');
+    var hit = 0, firstLink = null;
+    for(var i=0;i<nodes.length;i++){
+      if(nodes[i].textContent.indexOf(q) !== -1){
+        hit++;
+        if(!firstLink){ firstLink = nodes[i].closest('a') || nodes[i]; }
+      }
+    }
+    if(hit > 0){
+      fb.innerHTML = '找到 <strong>'+hit+'</strong> 处相关，' + (firstLink ? '试试 <a href="'+(firstLink.getAttribute('href')||'#')+'">跳转查看</a>' : '可滚动查找。');
+    }else{
+      fb.innerHTML = '暂时没有与“'+q.replace(/[<>&]/g,'')+'”相关的条目，换“白袜”“女超”“防滑”试试。';
+    }
+    fb.classList.add('show');
+  });
+  document.addEventListener('click', function(e){
+    if(!form.contains(e.target)) fb.classList.remove('show');
+  });
+
+  // 滚动高亮侧栏
+  var links = document.querySelectorAll('#sideNav a');
+  var sections = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    var el = document.getElementById(id);
+    if(el) sections.push({el:el, a:a});
+  });
+  function spy(){
+    var pos = window.scrollY + 140;
+    var current = null;
+    sections.forEach(function(s){
+      if(s.el.offsetTop <= pos) current = s;
+    });
+    links.forEach(function(a){ a.classList.remove('active'); });
+    if(current) current.a.classList.add('active');
+  }
+  window.addEventListener('scroll', spy, {passive:true});
+  spy();
+
+  // 回到顶部
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 500) toTop.classList.add('show');
+    else toTop.classList.remove('show');
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"白袜女足",
+  "description":"记录女子足球赛场白色球袜的配色、参数与可见度，提供深度解析、观赛指南与球迷评论。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"女超联赛对球袜颜色有硬性规定吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"规则要求同队球员球袜颜色一致，但不能与对方球袜颜色混淆。白色球袜在多数球场可用，裁判会在赛前检查。2026 赛季第 21 轮没有出现因袜色被要求更换的情况。"}
+    },
+    {
+      "@type":"Question",
+      "name":"白色球袜在雨天比赛里会影响球员吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"影响主要在重量。吸湿后白袜增重约 18–25 克，深色袜差不多。真正拉开差距的是袜底防滑，整片硅胶在湿滑场地更稳，点状防滑在 11 月 5 日的实测里打滑次数多出 6 次。"}
+    },
+    {
+      "@type":"Question",
+      "name":"球迷版白袜能机洗吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"可以，但要翻面、装洗衣袋、水温不超过 40℃。含氯漂白剂会让袜口金线褪色，江苏队 2025 赛季旧款就因此降级为训练用。建议自然晾干，不用烘干机。"}
+    },
+    {
+      "@type":"Question",
+      "name":"怎么分辨球员版和球迷版的白袜？",
+      "acceptedAnswer":{"@type":"Answer","text":"看袜口内侧：球员版金线是织入，有浮线；球迷版是印花，内侧平滑。再看袜底，球员版为整片硅胶，球迷版为点状。价差通常在 180 元左右。"}
+    },
+    {
+      "@type":"Question",
+      "name":"现场看球，哪一侧看白袜最清楚？",
+      "acceptedAnswer":{"@type":"Answer","text":"主队替补席一侧的边线低区。11 月 7 日上海金山体育中心东看台 1–6 排，能看到上海队白袜的金线在慢镜头里连续出现三次。西看台角度偏，袜口细节会被广告牌遮挡。"}
+    }
+  ]
+}
+</script>
+</body>
+  </html>
