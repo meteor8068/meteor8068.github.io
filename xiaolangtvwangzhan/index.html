@@ -1,0 +1,1289 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小蓝gtv网站-内容导航与使用手记</title>
+<meta name="description" content="小蓝gtv网站内容导航与使用手记。整理独立影像站点常见的频道划分、资源索引方式、播放器兼容要点与检索技巧，含2026年11月更新条目、常见故障问答、用户评论与深度解析，帮助判断内容质量与可用性。">
+<meta name="keywords" content="小蓝gtv网站">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316335c'/%3E%3Ccircle cx='32' cy='28' r='12' fill='%234fb3f7'/%3E%3Crect x='28' y='38' width='8' height='14' rx='3' fill='%2390d7ff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --blue-900:#0d2340;
+  --blue-800:#16335c;
+  --blue-700:#1d4478;
+  --blue-500:#2f74c0;
+  --blue-300:#6fb6ef;
+  --blue-100:#e3f1fd;
+  --blue-50:#f2f8fe;
+  --ink:#1b2430;
+  --ink-2:#3d4a5c;
+  --ink-3:#657084;
+  --line:#d6e2ef;
+  --line-soft:#e8eff7;
+  --paper:#ffffff;
+  --paper-2:#f7fafd;
+  --accent:#e0713a;
+  --accent-soft:#fdf1ea;
+  --ok:#2f8f5b;
+  --radius-s:6px;
+  --radius-m:12px;
+  --radius-l:18px;
+  --shadow-s:0 1px 2px rgba(16,40,70,.06),0 2px 8px rgba(16,40,70,.05);
+  --shadow-m:0 2px 6px rgba(16,40,70,.07),0 10px 26px rgba(16,40,70,.08);
+  --fs-1:2.05rem;
+  --fs-2:1.5rem;
+  --fs-3:1.16rem;
+  --fs-4:1.02rem;
+  --fs-5:.94rem;
+  --fs-6:.85rem;
+  --lh-body:1.85;
+  --sp-1:6px;
+  --sp-2:12px;
+  --sp-3:20px;
+  --sp-4:30px;
+  --sp-5:46px;
+  --sp-6:68px;
+  --font-main:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sticky-h:96px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font-main);
+  color:var(--ink);
+  background:var(--paper-2);
+  font-size:16px;
+  line-height:var(--lh-body);
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block}
+a{color:var(--blue-700);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--sp-3)}
+:focus-visible{outline:2px solid var(--blue-500);outline-offset:3px;border-radius:4px}
+
+/* ---------- sticky stack ---------- */
+.sticky-stack{
+  position:sticky;top:0;z-index:60;
+  box-shadow:0 1px 0 var(--line);
+}
+.notice-bar{
+  background:var(--blue-900);
+  color:#d9e9fa;
+  font-size:var(--fs-6);
+  line-height:1.6;
+}
+.notice-bar .wrap{
+  display:flex;gap:var(--sp-2);align-items:center;
+  padding-top:7px;padding-bottom:7px;
+  overflow-x:auto;white-space:nowrap;
+}
+.notice-bar strong{color:#fff;font-weight:600}
+.notice-bar .tag{
+  flex:0 0 auto;
+  border:1px solid #3f6a9b;color:#a9cdf0;
+  border-radius:999px;padding:1px 9px;font-size:.76rem;
+}
+.notice-bar .sep{color:#3f6a9b}
+
+.site-header{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .wrap{
+  display:flex;align-items:center;gap:var(--sp-3);
+  padding-top:10px;padding-bottom:10px;
+  min-height:60px;
+  flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.brand-mark{width:34px;height:34px;flex:0 0 auto}
+.brand-name{font-weight:700;font-size:1.02rem;color:var(--blue-900);letter-spacing:.3px}
+.nav-main{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+.nav-main a{
+  padding:6px 11px;border-radius:999px;font-size:var(--fs-6);color:var(--ink-2);
+  font-weight:500;
+}
+.nav-main a:hover{background:var(--blue-100);color:var(--blue-800);text-decoration:none}
+.head-actions{display:flex;align-items:center;gap:8px}
+.btn-menu{
+  display:none;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius-s);padding:7px 12px;font-size:var(--fs-6);
+  color:var(--blue-800);cursor:pointer;font-family:inherit;
+}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{
+  width:190px;padding:7px 10px 7px 12px;border:1px solid var(--line);
+  border-radius:999px;font-size:var(--fs-6);font-family:inherit;color:var(--ink);
+  background:#fff;transition:border-color .15s;
+}
+.search-box input:focus{border-color:var(--blue-500);outline:none}
+.search-box input::placeholder{color:var(--ink-3)}
+.search-feedback{
+  position:absolute;left:0;right:0;top:calc(100% + 6px);
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-m);
+  box-shadow:var(--shadow-m);padding:8px;font-size:var(--fs-6);
+  display:none;z-index:70;max-height:260px;overflow:auto;width:250px;
+}
+.search-feedback.show{display:block}
+.search-feedback .sr-item{display:block;padding:5px 8px;border-radius:5px;color:var(--ink-2)}
+.search-feedback .sr-item:hover{background:var(--blue-50);text-decoration:none}
+.search-feedback .sr-empty{color:var(--ink-3);padding:4px 8px}
+
+/* ---------- hero ---------- */
+.hero{
+  background:linear-gradient(165deg,#0d2340 0%,#16335c 52%,#1d4478 100%);
+  color:#eaf4ff;position:relative;overflow:hidden;
+}
+.hero .wrap{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:var(--sp-4);align-items:center;
+  padding-top:var(--sp-5);padding-bottom:var(--sp-5);
+  position:relative;z-index:2;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:var(--fs-6);color:#9ec9ef;letter-spacing:.08em;
+  border:1px solid #35618f;border-radius:999px;padding:3px 12px;margin-bottom:var(--sp-2);
+}
+.hero h1{
+  font-size:var(--fs-1);line-height:1.35;margin:0 0 var(--sp-2);
+  letter-spacing:.01em;color:#fff;
+}
+.hero p.lede{
+  margin:0 0 var(--sp-3);font-size:var(--fs-4);color:#c9dff5;max-width:36em;
+}
+.hero-actions{display:flex;gap:var(--sp-2);flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:9px 18px;border-radius:999px;font-size:var(--fs-5);
+  font-weight:600;border:1px solid transparent;transition:transform .15s;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:var(--blue-300);color:#0d2340}
+.btn-primary:hover{background:#8cc8f4}
+.btn-ghost{border-color:#3f6a9b;color:#d5e8fa}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.hero-meta{
+  display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-top:var(--sp-3);
+  font-size:var(--fs-6);color:#9ec9ef;
+}
+.hero-meta b{color:#fff;font-weight:600;font-size:1.05rem}
+.hero-art{position:relative;min-height:230px}
+.hero-art svg{width:100%;height:auto;display:block}
+.hero-glow{
+  position:absolute;inset:auto -60px -120px auto;width:320px;height:320px;
+  background:radial-gradient(circle,rgba(79,179,247,.35),transparent 68%);
+  border-radius:50%;filter:blur(6px);z-index:1;pointer-events:none;
+}
+
+/* ---------- section shell ---------- */
+main{padding-top:var(--sp-4)}
+section.block{
+  background:var(--paper);border:1px solid var(--line-soft);
+  border-radius:var(--radius-l);padding:var(--sp-4);
+  margin-bottom:var(--sp-4);box-shadow:var(--shadow-s);
+  scroll-margin-top:calc(var(--sticky-h) + 14px);
+}
+.block-head{
+  display:flex;align-items:baseline;gap:var(--sp-2);flex-wrap:wrap;
+  border-bottom:1px solid var(--line-soft);padding-bottom:var(--sp-2);
+  margin-bottom:var(--sp-3);
+}
+.block-head h2{
+  font-size:var(--fs-2);margin:0;letter-spacing:.01em;color:var(--blue-900);
+}
+.block-head .sub{font-size:var(--fs-6);color:var(--ink-3)}
+.block-head .more{margin-left:auto;font-size:var(--fs-6);font-weight:600}
+
+/* layout with sidebar */
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 268px;
+  gap:var(--sp-4);align-items:start;
+}
+.sidebar{position:sticky;top:calc(var(--sticky-h) + 14px);display:grid;gap:var(--sp-3)}
+.side-card{
+  background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--radius-m);
+  padding:var(--sp-3);box-shadow:var(--shadow-s);
+}
+.side-card h3{font-size:var(--fs-5);margin:0 0 var(--sp-2);color:var(--blue-900)}
+.side-nav{display:grid;gap:2px}
+.side-nav a{
+  display:block;padding:5px 9px;border-radius:var(--radius-s);
+  font-size:var(--fs-6);color:var(--ink-2);border-left:3px solid transparent;
+}
+.side-nav a:hover{background:var(--blue-50);text-decoration:none}
+.side-nav a.active{
+  background:var(--blue-100);color:var(--blue-800);
+  border-left-color:var(--blue-500);font-weight:600;
+}
+
+/* ---------- overview stats ---------- */
+.stat-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-2);
+}
+.stat{
+  background:var(--blue-50);border:1px solid var(--line-soft);
+  border-radius:var(--radius-m);padding:var(--sp-2) var(--sp-3);
+}
+.stat b{display:block;font-size:1.5rem;color:var(--blue-800);line-height:1.3}
+.stat span{font-size:var(--fs-6);color:var(--ink-3)}
+.overview-copy{margin-top:var(--sp-3);color:var(--ink-2);font-size:var(--fs-5)}
+.overview-copy p{margin:0 0 var(--sp-2)}
+.overview-copy p:last-child{margin-bottom:0}
+
+/* ---------- picks ---------- */
+.pick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-3)}
+.pick-card{
+  border:1px solid var(--line-soft);border-radius:var(--radius-m);
+  overflow:hidden;background:#fff;display:flex;flex-direction:column;
+  transition:transform .15s,box-shadow .15s;
+}
+.pick-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-m)}
+.pick-card .thumb{aspect-ratio:16/7;overflow:hidden;background:var(--blue-100)}
+.pick-card .thumb img{width:100%;height:100%;object-fit:cover}
+.pick-body{padding:var(--sp-2) var(--sp-3) var(--sp-3)}
+.pick-body h3{font-size:var(--fs-3);margin:0 0 6px;line-height:1.5}
+.pick-body h3 a{color:var(--blue-900)}
+.pick-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chip{
+  display:inline-block;font-size:.76rem;padding:1px 9px;border-radius:999px;
+  background:var(--blue-50);border:1px solid var(--line-soft);color:var(--blue-700);
+}
+.chip-accent{background:var(--accent-soft);border-color:#f3d5c3;color:#a8522a}
+.pick-body p{margin:0 0 8px;font-size:var(--fs-5);color:var(--ink-2)}
+.pick-meta{font-size:var(--fs-6);color:var(--ink-3);display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- compact list ---------- */
+.list-compact{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--radius-m);overflow:hidden}
+.list-compact li{background:#fff;padding:10px var(--sp-3);display:flex;gap:var(--sp-2);align-items:baseline;font-size:var(--fs-5)}
+.list-compact .date{
+  flex:0 0 auto;font-variant-numeric:tabular-nums;font-size:var(--fs-6);
+  color:var(--ink-3);letter-spacing:.02em;
+}
+.list-compact a{color:var(--ink);font-weight:500}
+.list-compact .lbl{
+  flex:0 0 auto;font-size:.72rem;padding:0 7px;border-radius:4px;
+  background:var(--blue-100);color:var(--blue-800);
+}
+.list-compact .txt{color:var(--ink-2);font-size:var(--fs-6);margin-left:auto;text-align:right}
+
+/* ---------- channel index ---------- */
+.channel-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-2)}
+.channel{
+  border:1px solid var(--line-soft);border-radius:var(--radius-m);
+  padding:var(--sp-2) var(--sp-2);background:var(--paper-2);
+  transition:border-color .15s,background .15s;
+}
+.channel:hover{border-color:var(--blue-300);background:#fff;text-decoration:none}
+.channel strong{display:block;font-size:var(--fs-5);color:var(--blue-900);margin-bottom:2px}
+.channel span{font-size:var(--fs-6);color:var(--ink-3)}
+
+/* ---------- deep analysis ---------- */
+.article-body{display:grid;gap:var(--sp-3);max-width:52em}
+.article-body h3{
+  font-size:var(--fs-3);margin:var(--sp-2) 0 4px;color:var(--blue-900);
+  border-left:4px solid var(--blue-300);padding-left:10px;
+}
+.article-body p{margin:0;color:var(--ink-2);font-size:var(--fs-5)}
+.article-body ul{margin:0;padding-left:1.2em;color:var(--ink-2);font-size:var(--fs-5)}
+.article-body li{margin-bottom:6px}
+.article-body li::marker{color:var(--blue-500)}
+.callout{
+  background:var(--blue-50);border:1px solid var(--line);
+  border-radius:var(--radius-m);padding:var(--sp-3);
+}
+.callout strong{color:var(--blue-800)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line-soft);border-radius:var(--radius-m)}
+table{border-collapse:collapse;width:100%;font-size:var(--fs-6);min-width:420px}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line-soft);vertical-align:top}
+th{background:var(--blue-50);color:var(--blue-900);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---------- steps ---------- */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:var(--sp-2);counter-reset:step}
+.steps li{
+  display:grid;grid-template-columns:34px minmax(0,1fr);gap:var(--sp-2);
+  background:var(--paper-2);border:1px solid var(--line-soft);
+  border-radius:var(--radius-m);padding:var(--sp-2) var(--sp-3);
+}
+.steps li::before{
+  counter-increment:step;content:counter(step);
+  width:30px;height:30px;border-radius:50%;background:var(--blue-800);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:var(--fs-6);
+}
+.steps h3{margin:0 0 3px;font-size:var(--fs-5);color:var(--blue-900)}
+.steps p{margin:0;font-size:var(--fs-6);color:var(--ink-2)}
+
+/* ---------- compare panels ---------- */
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-2)}
+.compare .panel{
+  border:1px solid var(--line);border-radius:var(--radius-m);padding:var(--sp-3);
+  background:#fff;
+}
+.compare .panel h3{margin:0 0 var(--sp-2);font-size:var(--fs-4);color:var(--blue-900)}
+.compare .panel.alt{background:var(--accent-soft);border-color:#f3d5c3}
+.compare .panel.alt h3{color:#8f4522}
+.compare ul{margin:0;padding-left:1.15em;font-size:var(--fs-6);color:var(--ink-2)}
+.compare li{margin-bottom:5px}
+
+/* ---------- faq ---------- */
+.faq-list{display:grid;gap:8px}
+details.faq{
+  border:1px solid var(--line-soft);border-radius:var(--radius-m);
+  background:var(--paper-2);padding:0;
+}
+details.faq summary{
+  cursor:pointer;padding:11px var(--sp-3);font-weight:600;font-size:var(--fs-5);
+  color:var(--blue-900);list-style:none;display:flex;gap:8px;align-items:baseline;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::before{
+  content:"+";color:var(--blue-500);font-weight:700;flex:0 0 auto;
+}
+details.faq[open] summary::before{content:"−"}
+details.faq[open] summary{border-bottom:1px solid var(--line-soft)}
+details.faq .a{padding:var(--sp-2) var(--sp-3) var(--sp-3);font-size:var(--fs-6);color:var(--ink-2)}
+details.faq .a p{margin:0 0 8px}
+details.faq .a p:last-child{margin-bottom:0}
+
+/* ---------- comments ---------- */
+.comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-2)}
+.comment{
+  border:1px solid var(--line-soft);border-radius:var(--radius-m);
+  padding:var(--sp-2) var(--sp-3);background:#fff;
+}
+.comment header{display:flex;gap:10px;align-items:baseline;margin-bottom:5px;flex-wrap:wrap}
+.comment .who{font-weight:600;font-size:var(--fs-6);color:var(--blue-800)}
+.comment time{font-size:.76rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.comment .stars{font-size:.76rem;color:var(--accent);letter-spacing:.1em}
+.comment p{margin:0;font-size:var(--fs-6);color:var(--ink-2)}
+.comment .ref{color:var(--blue-700);font-weight:600}
+
+/* ---------- news ---------- */
+.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-3)}
+.news-item{border-left:3px solid var(--blue-300);padding-left:var(--sp-2)}
+.news-item time{font-size:var(--fs-6);color:var(--ink-3);font-variant-numeric:tabular-nums}
+.news-item h3{font-size:var(--fs-5);margin:2px 0 5px;color:var(--blue-900);line-height:1.55}
+.news-item p{margin:0;font-size:var(--fs-6);color:var(--ink-2)}
+
+/* ---------- recommended tags ---------- */
+.tag-index{display:flex;flex-wrap:wrap;gap:8px}
+.tag-index a{
+  border:1px solid var(--line);border-radius:999px;
+  padding:5px 14px;font-size:var(--fs-6);color:var(--blue-800);
+  background:var(--paper-2);transition:background .15s,border-color .15s;
+}
+.tag-index a:hover{background:var(--blue-100);border-color:var(--blue-300);text-decoration:none}
+.tag-index a .n{color:var(--ink-3);font-size:.74rem;margin-left:3px}
+
+/* ---------- ranking timeline ---------- */
+.rank-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.rank-list li{
+  display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:10px;
+  align-items:baseline;padding:8px var(--sp-2);border-radius:var(--radius-s);
+  background:var(--paper-2);font-size:var(--fs-5);
+}
+.rank-list .rk{
+  font-weight:700;color:var(--blue-800);font-size:var(--fs-6);
+  font-variant-numeric:tabular-nums;text-align:center;
+}
+.rank-list li:nth-child(-n+3) .rk{color:var(--accent)}
+.rank-list .score{font-size:var(--fs-6);color:var(--ink-3);font-variant-numeric:tabular-nums}
+.timeline{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line);display:grid;gap:var(--sp-2)}
+.timeline li{position:relative;font-size:var(--fs-6);color:var(--ink-2)}
+.timeline li::before{
+  content:"";position:absolute;left:-25px;top:6px;width:10px;height:10px;
+  border-radius:50%;background:var(--blue-300);border:2px solid #fff;
+}
+.timeline b{display:block;color:var(--blue-900);font-size:var(--fs-5);margin-bottom:1px}
+
+/* ---------- footer ---------- */
+footer.site-foot{
+  background:var(--blue-900);color:#b8d4ee;margin-top:var(--sp-4);
+  font-size:var(--fs-6);
+}
+.foot-grid{
+  display:grid;grid-template-columns:1.3fr repeat(3,minmax(0,1fr));
+  gap:var(--sp-4);padding:var(--sp-5) 0 var(--sp-3);
+}
+.foot-brand .brand-name{color:#fff;font-size:var(--fs-4)}
+.foot-brand .brand-mark{width:30px;height:30px}
+.foot-pos{margin:var(--sp-2) 0 0;color:#9ec9ef;max-width:24em}
+.foot-col h4{color:#fff;font-size:var(--fs-6);margin:0 0 8px;font-weight:600}
+.foot-col a{display:block;color:#a9cdf0;padding:2px 0;font-size:.82rem}
+.foot-col a:hover{color:#fff}
+.foot-note{
+  border-top:1px solid #244a78;padding:var(--sp-2) 0 var(--sp-4);
+  color:#88aed2;font-size:.8rem;line-height:1.8;
+}
+.foot-note p{margin:0 0 4px}
+
+/* back to top */
+.to-top{
+  position:fixed;right:18px;bottom:22px;z-index:80;
+  width:42px;height:42px;border-radius:50%;
+  background:var(--blue-800);color:#fff;border:1px solid #2f5d90;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s,visibility .2s,transform .2s;
+  font-size:1rem;box-shadow:var(--shadow-m);
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--blue-700)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static;order:2;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero .wrap{grid-template-columns:1fr;gap:var(--sp-3)}
+  .hero-art{min-height:0;max-width:420px}
+  .stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .channel-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  :root{--sticky-h:112px;--fs-1:1.62rem;--fs-2:1.28rem;--sp-4:24px}
+  .site-header .wrap{gap:var(--sp-2)}
+  .btn-menu{display:inline-block;margin-left:auto}
+  .nav-main{
+    display:none;width:100%;margin-left:0;
+    background:#fff;border-top:1px solid var(--line);
+    padding:6px 0 4px;gap:2px;
+  }
+  .nav-main.open{display:flex}
+  .nav-main a{padding:8px 10px;width:calc(50% - 2px);border-radius:var(--radius-s)}
+  .head-actions{width:100%;order:3;display:none}
+  .head-actions.open{display:flex}
+  .search-box, .search-box input{width:100%}
+  .pick-grid,.compare,.comment-grid,.news-grid{grid-template-columns:1fr}
+  .channel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sidebar{grid-template-columns:1fr}
+  .list-compact li{flex-wrap:wrap}
+  .list-compact .txt{margin-left:0;width:100%}
+  .stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  section.block{padding:var(--sp-3);border-radius:var(--radius-m)}
+  .foot-grid{grid-template-columns:1fr;gap:var(--sp-3);padding-top:var(--sp-4)}
+  .to-top{right:12px;bottom:14px}
+  .notice-bar .wrap{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .pick-card:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-stack">
+  <div class="notice-bar">
+    <div class="wrap">
+      <span class="tag">更新</span>
+      <strong>小蓝gtv网站</strong>
+      <span>11月8日新增“纪录片与访谈”频道 14 条，播放源一 2 条失效已标注</span>
+      <span class="sep">·</span>
+      <span>11月6日 播放器内核升至 3.4.1，HEVC 软解在安卓 12 以下仍建议改用 720P</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/#top" aria-label="返回页面顶部">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#16335c"/>
+          <circle cx="32" cy="27" r="11.5" fill="#4fb3f7"/>
+          <rect x="28.5" y="36" width="7" height="15" rx="3" fill="#90d7ff"/>
+          <circle cx="27" cy="25" r="1.8" fill="#0d2340"/>
+          <circle cx="37" cy="25" r="1.8" fill="#0d2340"/>
+        </svg>
+        <span class="brand-name">小蓝gtv网站</span>
+      </a>
+
+      <button class="btn-menu" type="button" id="menuBtn" aria-expanded="false" aria-controls="navMain headActions">
+        频道菜单
+      </button>
+
+      <nav class="nav-main" id="navMain" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#channels">频道索引</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+      </nav>
+
+      <div class="head-actions" id="headActions">
+        <div class="search-box">
+          <input type="search" id="siteSearch" placeholder="搜索频道、条目、问答" aria-label="站内本地搜索" autocomplete="off">
+          <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="hero" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="hero-eyebrow">独立影像 · 频道导航手记</span>
+      <h1>小蓝gtv网站</h1>
+      <p class="lede">一个围绕独立影像、访谈与纪录短片的目录型站点。按频道归类、按播放源标注可用性、按条目给出时长与画质信息，检索以关键词与时间双轴为主。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#channels">进入频道索引</a>
+        <a class="btn btn-ghost" href="/#guide">查看使用指南</a>
+      </div>
+      <div class="hero-meta">
+        <span><b>386</b> 条在架条目</span>
+        <span><b>10</b> 个内容频道</span>
+        <span><b>11月8日</b> 最近一次条目校对</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 300" role="presentation">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4fb3f7" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#2f74c0" stop-opacity=".55"/>
+          </linearGradient>
+        </defs>
+        <rect x="18" y="30" width="200" height="126" rx="12" fill="#123055" stroke="#3f6a9b"/>
+        <rect x="32" y="44" width="172" height="82" rx="7" fill="url(#g1)" opacity=".85"/>
+        <path d="M112 72 L146 85 L112 98 Z" fill="#0d2340"/>
+        <rect x="32" y="134" width="88" height="7" rx="3.5" fill="#3f6a9b"/>
+        <rect x="128" y="134" width="52" height="7" rx="3.5" fill="#2c5585"/>
+        <rect x="238" y="30" width="164" height="58" rx="10" fill="#123055" stroke="#3f6a9b"/>
+        <rect x="250" y="43" width="94" height="7" rx="3.5" fill="#6fb6ef"/>
+        <rect x="250" y="58" width="66" height="7" rx="3.5" fill="#3f6a9b"/>
+        <rect x="238" y="100" width="164" height="56" rx="10" fill="#123055" stroke="#3f6a9b"/>
+        <rect x="250" y="112" width="120" height="7" rx="3.5" fill="#6fb6ef"/>
+        <rect x="250" y="127" width="80" height="7" rx="3.5" fill="#3f6a9b"/>
+        <rect x="18" y="176" width="384" height="86" rx="12" fill="#123055" stroke="#3f6a9b"/>
+        <circle cx="52" cy="219" r="18" fill="#1d4478" stroke="#4fb3f7"/>
+        <path d="M47 211 L60 219 L47 227 Z" fill="#90d7ff"/>
+        <rect x="84" y="200" width="150" height="8" rx="4" fill="#6fb6ef"/>
+        <rect x="84" y="217" width="230" height="7" rx="3.5" fill="#2c5585"/>
+        <rect x="84" y="232" width="118" height="7" rx="3.5" fill="#2c5585"/>
+        <circle cx="36" cy="14" r="5" fill="#4fb3f7" opacity=".8"/>
+        <circle cx="396" cy="282" r="7" fill="#2f74c0" opacity=".6"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<main class="wrap" id="main">
+
+  <div class="layout">
+    <div>
+
+      <!-- 1 领域概览 -->
+      <section class="block" id="overview">
+        <div class="block-head">
+          <h2>领域概览：独立影像目录站点在做什么</h2>
+          <span class="sub">收录口径与条目标注方式</span>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><b>386</b><span>在架条目总数</span></div>
+          <div class="stat"><b>10</b><span>内容频道数量</span></div>
+          <div class="stat"><b>27</b><span>标失效的播放源</span></div>
+          <div class="stat"><b>4.6 小时</b><span>单条最长访谈</span></div>
+        </div>
+        <div class="overview-copy">
+          <p>这类站点的核心工作不是生产影像，而是把散落在各平台、各账号下的独立作品整理成可检索的条目。一条完整条目通常包含四类字段：作品名与作者、时长与画质、可用播放源、上线与校对日期。少一项，检索效率就要打折扣。</p>
+          <p>频道划分决定检索路径。按题材分（剧情短片、纪录、动画实验）适合找类型；按来源分（导演自发布、影展单元、校园放映）适合追人。11月8日的目录里，题材频道占 6 个，来源频道占 4 个，两种路径可以交叉筛选。</p>
+          <p>播放源标注比数量更重要。同一个条目常挂着三到五个源，其中标“源一”“源二”的多为原始上传，标“镜像”的由用户转存。转存源清晰度未必下降，但存在中途删档风险，目录里用灰色标签单独提示。</p>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="block" id="picks">
+        <div class="block-head">
+          <h2>精选内容推荐</h2>
+          <span class="sub">编辑按可看性挑选的六条</span>
+          <a class="more" href="/#channels">按频道浏览 →</a>
+        </div>
+        <div class="pick-grid">
+          <article class="pick-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/gtv-doc-river/560/245" width="560" height="245" loading="lazy" alt="纪录片《河岸三公里》中沿河拍摄的固定机位画面示意"></div>
+            <div class="pick-body">
+              <div class="pick-tags"><span class="chip">纪录片</span><span class="chip chip-accent">源一可用</span></div>
+              <h3><a href="/#deep">河岸三公里：一条支流的四季拍摄记录</a></h3>
+              <p>46 分钟，1080P。作者用四个季节、同一个机位拍完，解说压到最少。11月3日校对，源一正常，源二已失效。</p>
+              <div class="pick-meta"><span>时长 46:12</span><span>作者：林岸</span><span>上线 2026-10-28</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/gtv-interview-desk/560/245" width="560" height="245" loading="lazy" alt="长桌访谈节目的双机位桌面布置与录音设备"></div>
+            <div class="pick-body">
+              <div class="pick-tags"><span class="chip">访谈</span><span class="chip">长片</span></div>
+              <h3><a href="/#updates">剪辑师访谈第 12 期：一场戏拆成 37 个镜头</a></h3>
+              <p>2 小时 08 分。嘉宾把一段 4 分钟的动作戏逐镜过了一遍，含时间轴截图。适合想了解剪辑节奏的人。</p>
+              <div class="pick-meta"><span>时长 128:40</span><span>来源：自发布</span><span>上线 2026-10-21</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/gtv-animation-blue/560/245" width="560" height="245" loading="lazy" alt="二维实验动画中的蓝色几何图形逐帧变化"></div>
+            <div class="pick-body">
+              <div class="pick-tags"><span class="chip">动画实验</span><span class="chip chip-accent">无声</span></div>
+              <h3><a href="/#channels">蓝色循环：7 分钟无声逐帧动画</a></h3>
+              <p>创作者用 12 帧每秒的手绘节奏，配乐为零。目录标注“无声”的条目占全部 9%，播放前需自行确认设备音量。</p>
+              <div class="pick-meta"><span>时长 07:05</span><span>画质 1080P</span><span>上线 2026-10-30</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/gtv-shortcity/560/245" width="560" height="245" loading="lazy" alt="城市夜戏短片中的天桥与车流长曝光画面"></div>
+            <div class="pick-body">
+              <div class="pick-tags"><span class="chip">剧情短片</span><span class="chip">18 分钟</span></div>
+              <h3><a href="/#deep">夜班车：18 分钟单场景剧情短片</a></h3>
+              <p>全片只在一个公交站取景，靠灯光变化分段。作者在简介里写了拍摄周期 9 天，属于可核对的制作信息。</p>
+              <div class="pick-meta"><span>时长 18:33</span><span>作者：陈末</span><span>上线 2026-10-25</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/gtv-camera-test/560/245" width="560" height="245" loading="lazy" alt="手持摄影机在低照度环境下的实拍测试画面"></div>
+            <div class="pick-body">
+              <div class="pick-tags"><span class="chip">技术测评</span><span class="chip">设备</span></div>
+              <h3><a href="/#guide">低照度手持实拍：三台机器的对照测试</a></h3>
+              <p>把同一条巷子分别用三台机器拍了一遍，附原始片段下载说明与噪点对比表。测试条件写在片头第 40 秒。</p>
+              <div class="pick-meta"><span>时长 22:51</span><span>来源：测评账号</span><span>上线 2026-11-02</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <div class="thumb"><img src="https://picsum.photos/seed/gtv-campus-screen/560/245" width="560" height="245" loading="lazy" alt="校园放映活动现场的投影幕布与折叠椅"></div>
+            <div class="pick-body">
+              <div class="pick-tags"><span class="chip">放映记录</span><span class="chip chip-accent">现场</span></div>
+              <h3><a href="/#news">十月校园放映记录：五场、共 318 名观众</a></h3>
+              <p>记录每场放映的片单、到场人数与映后提问。人数由主办方现场点数，属单方口径，未作第三方核验。</p>
+              <div class="pick-meta"><span>时长 31:20</span><span>场次 5</span><span>上线 2026-11-05</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="block" id="updates">
+        <div class="block-head">
+          <h2>最新更新</h2>
+          <span class="sub">11月2日至11月8日的条目变动</span>
+        </div>
+        <ul class="list-compact">
+          <li><span class="date">11-08</span><span class="lbl">新增</span><a href="/#channels">纪录片与访谈频道 14 条</a><span class="txt">其中 3 条标为多源</span></li>
+          <li><span class="date">11-08</span><span class="lbl">修正</span><a href="/#picks">河岸三公里 源二失效</a><span class="txt">改标灰色，源一保留</span></li>
+          <li><span class="date">11-07</span><span class="lbl">新增</span><a href="/#updates">剪辑师访谈第 12 期条目补全</a><span class="txt">补入时间轴截图 6 张</span></li>
+          <li><span class="date">11-06</span><span class="lbl">系统</span><a href="/#guide">播放器内核升至 3.4.1</a><span class="txt">安卓 12 以下建议 720P</span></li>
+          <li><span class="date">11-05</span><span class="lbl">新增</span><a href="/#news">十月校园放映记录</a><span class="txt">五场片单与观众数</span></li>
+          <li><span class="date">11-04</span><span class="lbl">修正</span><a href="/#channels">动画实验频道标签合并</a><span class="txt">“逐帧”“手绘”并为一项</span></li>
+          <li><span class="date">11-03</span><span class="lbl">校对</span><a href="/#deep">夜班车 时长由 17:52 更正为 18:33</a><span class="txt">以片尾字幕为准</span></li>
+          <li><span class="date">11-02</span><span class="lbl">新增</span><a href="/#guide">低照度手持实拍对照测试</a><span class="txt">含噪点对比表</span></li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="block" id="channels">
+        <div class="block-head">
+          <h2>分类入口：十个内容频道</h2>
+          <span class="sub">题材频道 6 个，来源频道 4 个</span>
+        </div>
+        <div class="channel-grid">
+          <a class="channel" href="/#deep"><strong>剧情短片</strong><span>时长 5—30 分钟</span></a>
+          <a class="channel" href="/#picks"><strong>纪录片</strong><span>长镜头与观察式</span></a>
+          <a class="channel" href="/#updates"><strong>访谈实录</strong><span>双机位长片</span></a>
+          <a class="channel" href="/#picks"><strong>动画实验</strong><span>逐帧与手绘</span></a>
+          <a class="channel" href="/#guide"><strong>设备与技术测评</strong><span>对照测试</span></a>
+          <a class="channel" href="/#news"><strong>放映现场记录</strong><span>映后问答</span></a>
+          <a class="channel" href="/#updates"><strong>导演自发布</strong><span>作者账号直链</span></a>
+          <a class="channel" href="/#news"><strong>影展单元</strong><span>入围与获奖</span></a>
+          <a class="channel" href="/#news"><strong>校园放映</strong><span>高校场次</span></a>
+          <a class="channel" href="/#guide"><strong>幕后与花絮</strong><span>制作过程</span></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="block" id="deep">
+        <div class="block-head">
+          <h2>深度解析：目录站真正稀缺的是失效标注</h2>
+          <span class="sub">以 27 条失效播放源为样本</span>
+        </div>
+        <div class="article-body">
+          <p>先把判断说清楚：一个独立影像目录的价值上限，取决于它对失效链接的处理速度，而不是收录条目的多少。386 条在架条目里，有 27 条至少一个播放源已失效，失效比例 7.0%。这个数字本身不说明问题，说明问题的是它被发现的方式。</p>
+
+          <h3>案例时间线：一条条目的 11 天</h3>
+          <ul>
+            <li>10月28日，《河岸三公里》上线，挂源一（作者自发布）、源二（用户转存）、源三（镜像）。</li>
+            <li>11月1日，源二在凌晨被原账号删除，目录没有自动检测，条目仍显示三个源。</li>
+            <li>11月3日，校对日，源二改标灰色，备注“原账号已删”。</li>
+            <li>11月8日，源一仍在，源三清晰度从 1080P 降至 720P，未改标。</li>
+          </ul>
+          <p>从删除到标注，中间隔了两天。这属于正常范围，前提是校对周期稳定在每周一次。一旦校对拖到两周，失效源的占比会明显上升，用户点开黑屏的几率变高。</p>
+
+          <h3>数据对比：三类播放源的存活率差异</h3>
+          <div class="table-wrap">
+            <table>
+              <caption class="sr-only" style="position:absolute;left:-9999px">三类播放源存活情况对照</caption>
+              <thead>
+                <tr><th>源类型</th><th>样本数</th><th>11月8日仍可用</th><th>存活率</th><th>常见失效原因</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>作者自发布</td><td class="num">212</td><td class="num">209</td><td class="num">98.6%</td><td>作者主动下架</td></tr>
+                <tr><td>用户转存</td><td class="num">140</td><td class="num">119</td><td class="num">85.0%</td><td>平台清理、账号注销</td></tr>
+                <tr><td>镜像</td><td class="num">61</td><td class="num">57</td><td class="num">93.4%</td><td>转码失败、清晰度降级</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>转存源的存活率比自发布低了 13.6 个百分点，差距比多数人预想的大。原因不难查：转存依赖中间账号，账号一注销，链接就是死链。所以目录里把自发布排在第一顺位并非偏好，而是可用性排序。</p>
+
+          <h3>说法差异：清晰度标注谁说了算</h3>
+          <p>同一部《蓝色循环》，条目页写 1080P，播放器信息栏显示 1280×720，作者简介写“输出 2K”。三个口径并存时，以播放器实际解码分辨率回填，并在备注里保留作者说法。11月4日的标签合并修正，就是把这套规则写进校对说明，此后 14 条动画类条目的画质字段重新核过。</p>
+          <div class="callout">
+            <p><strong>可核对结构：一条条目是否可靠的四个检查点</strong></p>
+            <ul>
+              <li>播放源数量 ≥ 2，且至少一个是作者自发布；</li>
+              <li>时长以片尾字幕为准，与平台显示差值不超过 5 秒；</li>
+              <li>画质填写解码分辨率，不填宣传口径；</li>
+              <li>校对日期距今不超过 14 天。</li>
+            </ul>
+          </div>
+
+          <h3>规则前后变化：标签合并之后</h3>
+          <p>11月4日之前，“逐帧”和“手绘”是两个独立标签，共有 41 条内容同时挂着两个标签，检索时重复出现。合并为“逐帧手绘”一项后，检索结果从 63 条降到 41 条，误点减少。改动本身很小，但它说明一个原则：标签越细不等于越好检索，重叠标签会稀释结果。</p>
+          <p>需要说明的是，关于转存源存活率的结论，样本只有 140 条，观察窗口不足一个月，属于短期数据。若把时间拉到半年，作者自发布也可能因为账号迁移而失效。这个判断可以被反驳，反驳的方式很简单：拉出六个月以上的链接检测记录来比对。</p>
+        </div>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="block" id="guide">
+        <div class="block-head">
+          <h2>体验指南：从检索到播放的五步</h2>
+          <span class="sub">适用于桌面与移动端</span>
+        </div>
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>先定频道再定关键词</h3>
+              <p>十个频道各有条数上限，先选频道能把范围压到百条以内。在频道内再输关键词，命中率高于全站直接搜。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>看源标注再点播放</h3>
+              <p>条目页的源标签分三种颜色：蓝色为自发布，灰色为转存，橙色为镜像。灰色源超过 30 天未检测，会加“待校对”字样。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>核对时长与画质字段</h3>
+              <p>时长以片尾字幕为准。若条目写 18:33、播放器显示 17:52，差异多来自片头广告被剪，可直接按条目字段记录。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>按设备调整播放参数</h3>
+              <p>内核 3.4.1 下，安卓 12 以下设备播 HEVC 编码建议降到 720P，否则软解会掉帧。桌面浏览器不受此限。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>遇到黑屏先换源再反馈</h3>
+              <p>同一事件在两个源同时黑屏的概率低。换源仍失败时，记下条目名与校对日期再提交，处理更快。</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- 7 对照面板 -->
+      <section class="block" id="compare">
+        <div class="block-head">
+          <h2>两种观看路径的取舍</h2>
+          <span class="sub">追作者 与 追频道</span>
+        </div>
+        <div class="compare">
+          <div class="panel">
+            <h3>按作者追</h3>
+            <ul>
+              <li>适合已经认准某位创作者的人，如林岸、陈末。</li>
+              <li>作者自发布源存活率 98.6%，失效风险最低。</li>
+              <li>缺点是产量不稳定，一位作者一年可能只发 2 条。</li>
+              <li>目录提供作者页入口，可看其全部在架条目。</li>
+            </ul>
+          </div>
+          <div class="panel alt">
+            <h3>按频道追</h3>
+            <ul>
+              <li>适合想按类型扫片的观众，剧情短片、纪录片各有独立列表。</li>
+              <li>频道内条目每两周集中校对一次，失效标注随批次更新。</li>
+              <li>缺点是频道内质量参差，需要借助标签二次筛选。</li>
+              <li>10 个频道中，访谈实录的单条平均时长最长，达 74 分钟。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 FAQ -->
+      <section class="block" id="faq">
+        <div class="block-head">
+          <h2>常见问答</h2>
+          <span class="sub">围绕条目、播放源与设备</span>
+        </div>
+        <div class="faq-list">
+          <details class="faq">
+            <summary>播放源标签的三种颜色分别代表什么？</summary>
+            <div class="a">
+              <p>蓝色指作者自发布，灰色指用户转存，橙色指镜像。转存源依赖中间账号，账号注销后链接即失效，因此标注待校对。镜像源偶有清晰度降级，播放前可看信息栏确认分辨率。</p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>条目时长和播放器显示不一致，以哪个为准？</summary>
+            <div class="a">
+              <p>以片尾字幕为准。条目字段由校对时逐条核对，播放器时长可能因片头广告被剪短。差值在 5 秒内视为正常，超过 30 秒会在备注里写明原因。</p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>安卓手机播放 HEVC 编码条目卡顿怎么办？</summary>
+            <div class="a">
+              <p>内核 3.4.1 在安卓 12 以下对 HEVC 走软解，1080P 容易掉帧。把清晰度降到 720P 通常可解，或改用支持硬解的第三方播放器。桌面浏览器无此限制。</p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>为什么同一部片有多个条目？</summary>
+            <div class="a">
+              <p>多为版本差异：导演剪辑版、影展放映版、网络发布版时长不同。目录以片尾字幕和片头标识区分，同一事件不会跨条目重复计入统计。遇到重复条目可提交合并。</p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>校对日期多久更新一次？</summary>
+            <div class="a">
+              <p>常规条目每两周集中校对一批。11月8日批次覆盖纪录片与访谈频道 14 条，修正 1 条失效源。超过 14 天未校对的条目会在列表里加提示。</p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>无声条目怎么识别？</summary>
+            <div class="a">
+              <p>条目页有“无声”标签，动画实验频道里占比最高，全站在架无声条目占 9%。播放前无需调低音量，但部分无声条目在片尾附有文字说明，需看完整片长。</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 9 用户评论 -->
+      <section class="block" id="comments">
+        <div class="block-head">
+          <h2>用户评论</h2>
+          <span class="sub">来自条目页的短评摘录</span>
+        </div>
+        <div class="comment-grid">
+          <article class="comment">
+            <header><span class="who">岸边散步</span><time datetime="2026-11-08">11月8日</time><span class="stars">★★★★★</span></header>
+            <p>《河岸三公里》的四季同机位确实拍出来了，第 12 分钟那片芦苇从绿到黄，是一个镜头接的。源二失效不影响，源一很稳。</p>
+          </article>
+          <article class="comment">
+            <header><span class="who">剪辑台三号</span><time datetime="2026-11-07">11月7日</time><span class="stars">★★★★☆</span></header>
+            <p>访谈第 12 期里 37 个镜头的拆解很实用，但主持人插话太频繁，第 40 分钟那段被打断三次。内容值回两小时。</p>
+          </article>
+          <article class="comment">
+            <header><span class="who">夜班司机</span><time datetime="2026-11-06">11月6日</time><span class="stars">★★★☆☆</span></header>
+            <p>《夜班车》时长改过来是对的，我之前记的是 17 分多，按片尾字幕确实是 18:33。剧情后半段节奏散了点，灯光变化加分。</p>
+          </article>
+          <article class="comment">
+            <header><span class="who">逐帧爱好者</span><time datetime="2026-11-05">11月5日</time><span class="stars">★★★★★</span></header>
+            <p>“逐帧手绘”合并标签后好搜多了，以前两个标签混着点，重复结果不少。11月4日那次改动值得记一笔。</p>
+          </article>
+          <article class="comment">
+            <header><span class="who">低照度测试员</span><time datetime="2026-11-04">11月4日</time><span class="stars">★★★★☆</span></header>
+            <p>三台机器的低照度对照表做得清楚，噪点对比在第 14 分钟。可惜没写镜头型号，只有机身，复现起来差一点。</p>
+          </article>
+          <article class="comment">
+            <header><span class="who">投影仪管理员</span><time datetime="2026-11-03">11月3日</time><span class="stars">★★☆☆☆</span></header>
+            <p>校园放映记录里五场人数写 318，但现场折叠椅只有 60 把，单场人数存疑。希望下次标明是估算还是点数。</p>
+          </article>
+          <article class="comment">
+            <header><span class="who">安卓老机用户</span><time datetime="2026-11-02">11月2日</time><span class="stars">★★★★☆</span></header>
+            <p>安卓 11 播 HEVC 确实卡，按指南降到 720P 后正常。核更 3.4.1 之后软解提示也更明确了，这点好评。</p>
+          </article>
+          <article class="comment">
+            <header><span class="who">蓝屏一晚</span><time datetime="2026-11-01">11月1日</time><span class="stars">★★☆☆☆</span></header>
+            <p>点开《蓝色循环》写 1080P，信息栏却是 720P。不是大问题，但画质字段最好统一口径，别让人白等缓冲。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10 相关资讯 -->
+      <section class="block" id="news">
+        <div class="block-head">
+          <h2>相关资讯</h2>
+          <span class="sub">放映、影展与制作动态</span>
+        </div>
+        <div class="news-grid">
+          <article class="news-item">
+            <time datetime="2026-11-07">11月7日</time>
+            <h3>影展单元初审名单公布，独立短片占 42%</h3>
+            <p>名单共 118 部，时长 30 分钟以下占 50 部。初审由五位评委分组打分，评分表未公开，结果以主办方邮件为准。</p>
+          </article>
+          <article class="news-item">
+            <time datetime="2026-11-06">11月6日</time>
+            <h3>播放器内核 3.4.1 发布，修复解码切换崩溃</h3>
+            <p>版本说明列出 9 项修复，其中“HEVC 切换 720P 崩溃”为高频问题。更新后旧设备首次播放有约 2 秒初始化。</p>
+          </article>
+          <article class="news-item">
+            <time datetime="2026-11-05">11月5日</time>
+            <h3>十月校园放映落幕，映后问答平均 26 分钟</h3>
+            <p>五场放映分布在三所高校，片单以剧情短片为主。问答环节最长一场 41 分钟，记录稿已归档到放映现场频道。</p>
+          </article>
+          <article class="news-item">
+            <time datetime="2026-11-03">11月3日</time>
+            <h3>《夜班车》导演谈单场景拍摄：9 天拍完</h3>
+            <p>导演在简介里写明拍摄周期与场地限制，全片仅一个公交站取景。该说法来自作者自述，尚无第三方访谈佐证。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 11 相关推荐 -->
+      <section class="block" id="recommend">
+        <div class="block-head">
+          <h2>相关推荐</h2>
+          <span class="sub">按词条聚合的入口</span>
+        </div>
+        <div class="tag-index">
+          <a href="/#deep">独立短片目录整理<span class="n">63</span></a>
+          <a href="/#guide">低照度手持拍摄技巧<span class="n">18</span></a>
+          <a href="/#picks">长镜头纪录片推荐<span class="n">27</span></a>
+          <a href="/#updates">剪辑节奏逐镜拆解<span class="n">12</span></a>
+          <a href="/#channels">逐帧手绘动画实验<span class="n">41</span></a>
+          <a href="/#faq">播放源失效判断方法<span class="n">9</span></a>
+          <a href="/#news">校园放映映后问答<span class="n">22</span></a>
+          <a href="/#compare">作者自发布与转存对比<span class="n">15</span></a>
+          <a href="/#guide">HEVC 软解掉帧处理<span class="n">7</span></a>
+        </div>
+      </section>
+
+      <!-- 12 榜单与时间线 -->
+      <section class="block" id="ranking">
+        <div class="block-head">
+          <h2>本周条目热度与校对时间线</h2>
+          <span class="sub">统计窗口 11月2日—11月8日</span>
+        </div>
+        <div class="compare">
+          <div class="panel">
+            <h3>热度前五（按条目页访问量）</h3>
+            <ol class="rank-list">
+              <li><span class="rk">1</span><a href="/#picks">河岸三公里</a><span class="score">2,814 次</span></li>
+              <li><span class="rk">2</span><a href="/#updates">剪辑师访谈第 12 期</a><span class="score">2,106 次</span></li>
+              <li><span class="rk">3</span><a href="/#deep">夜班车</a><span class="score">1,733 次</span></li>
+              <li><span class="rk">4</span><a href="/#picks">蓝色循环</a><span class="score">1,290 次</span></li>
+              <li><span class="rk">5</span><a href="/#guide">低照度手持实拍对照</a><span class="score">964 次</span></li>
+            </ol>
+          </div>
+          <div class="panel alt">
+            <h3>校对时间线</h3>
+            <ul class="timeline">
+              <li><b>11月8日</b>纪录片与访谈频道 14 条入库，源二失效修正</li>
+              <li><b>11月6日</b>内核 3.4.1 上线，播放参数说明同步更新</li>
+              <li><b>11月4日</b>动画标签合并，41 条条目重挂标签</li>
+              <li><b>11月3日</b>《夜班车》时长字段更正为 18:33</li>
+              <li><b>11月2日</b>低照度对照测试条目上线，附噪点表</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <p style="font-size:.8rem;color:#657084;margin:0 0 8px">页脚更新时间 2026年11月8日，对应正文可核对更新项：纪录片与访谈频道入库、源二失效修正、动画标签合并。</p>
+
+    </div>
+
+    <!-- sidebar -->
+    <aside class="sidebar" aria-label="栏目导航与说明">
+      <div class="side-card">
+        <h3>栏目速览</h3>
+        <nav class="side-nav" id="sideNav">
+          <a href="/#overview">领域概览</a>
+          <a href="/#picks">精选内容推荐</a>
+          <a href="/#updates">最新更新</a>
+          <a href="/#channels">分类入口</a>
+          <a href="/#deep">深度解析</a>
+          <a href="/#guide">体验指南</a>
+          <a href="/#compare">观看路径取舍</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#comments">用户评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#recommend">相关推荐</a>
+          <a href="/#ranking">热度榜与时间线</a>
+        </nav>
+      </div>
+      <div class="side-card">
+        <h3>数据说明</h3>
+        <p style="margin:0;font-size:.82rem;color:#3d4a5c;line-height:1.8">386 条、10 个频道、27 条失效源等数字均为示例数据，按 2026年11月8日校对口径填写。播放量统计窗口为一周，不做跨周累计。</p>
+      </div>
+      <div class="side-card">
+        <h3>校对规则</h3>
+        <p style="margin:0;font-size:.82rem;color:#3d4a5c;line-height:1.8">时长以片尾字幕为准；画质填解码分辨率；源标签按自发布、转存、镜像三类排序。超过 14 天未校对会在列表加提示。</p>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+<footer class="site-foot" id="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1d4478"/>
+            <circle cx="32" cy="27" r="11.5" fill="#6fb6ef"/>
+            <rect x="28.5" y="36" width="7" height="15" rx="3" fill="#b9e2ff"/>
+            <circle cx="27" cy="25" r="1.8" fill="#0d2340"/>
+            <circle cx="37" cy="25" r="1.8" fill="#0d2340"/>
+          </svg>
+          <span class="brand-name">小蓝gtv网站</span>
+        </div>
+        <p class="foot-pos">按频道归类独立影像，把播放源可用性写进每一条目录记录。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容频道</h4>
+        <a href="/#picks">剧情短片</a>
+        <a href="/#picks">纪录片</a>
+        <a href="/#updates">访谈实录</a>
+        <a href="/#picks">动画实验</a>
+        <a href="/#guide">设备测评</a>
+      </div>
+      <div class="foot-col">
+        <h4>使用帮助</h4>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#compare">观看路径取舍</a>
+        <a href="/#recommend">词条索引</a>
+      </div>
+      <div class="foot-col">
+        <h4>动态与评论</h4>
+        <a href="/#news">相关资讯</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#ranking">热度榜</a>
+        <a href="/#updates">最新更新</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>站内条目、播放量、评论与放映数据均为示例，用于展示目录结构与字段口径，不构成对任何作品的评价。</p>
+      <p>更新时间 2026年11月8日 · 版权文字仅为结构示例 · 联系与授权信息以实际运营方发布为准</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* mobile menu */
+  var menuBtn = document.getElementById('menuBtn');
+  var navMain = document.getElementById('navMain');
+  var headActions = document.getElementById('headActions');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function(){
+      var open = navMain.classList.toggle('open');
+      headActions.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.textContent = open ? '收起菜单' : '频道菜单';
+    });
+    navMain.addEventListener('click', function(e){
+      if (e.target.tagName === 'A' && window.innerWidth <= 760) {
+        navMain.classList.remove('open');
+        headActions.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.textContent = '频道菜单';
+      }
+    });
+  }
+
+  /* back to top */
+  var toTop = document.getElementById('toTop');
+  function onScroll(){
+    if (window.scrollY > 520) { toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+    highlightSideNav();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  toTop.addEventListener('click', function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  /* sidebar scroll highlight */
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var targets = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  function highlightSideNav(){
+    var offset = 140;
+    var current = -1;
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i] && targets[i].getBoundingClientRect().top - offset <= 0) { current = i; }
+    }
+    sideLinks.forEach(function(a, i){
+      a.classList.toggle('active', i === current);
+    });
+  }
+  highlightSideNav();
+
+  /* smooth scroll with sticky offset for in-page anchors */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="/#"]');
+    if (!a) { return; }
+    var id = a.getAttribute('href').slice(2);
+    var el = document.getElementById(id);
+    if (!el) { return; }
+    e.preventDefault();
+    var sticky = document.querySelector('.sticky-stack');
+    var offset = sticky ? sticky.getBoundingClientRect().height + 14 : 20;
+    var y = el.getBoundingClientRect().top + window.scrollY - offset;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top: y, behavior: reduce ? 'auto' : 'smooth'});
+    history.replaceState(null, '', '/#' + id);
+    if (window.innerWidth <= 760) {
+      navMain.classList.remove('open');
+      headActions.classList.remove('open');
+      if (menuBtn) {
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.textContent = '频道菜单';
+      }
+    }
+  });
+
+  /* local search */
+  var input = document.getElementById('siteSearch');
+  var feedback = document.getElementById('searchFeedback');
+  var index = [
+    {t:'领域概览：独立影像目录站点在做什么', id:'overview', k:'概览 收录 字段'},
+    {t:'河岸三公里：一条支流的四季拍摄记录', id:'picks', k:'纪录片 河岸 林岸'},
+    {t:'剪辑师访谈第 12 期：一场戏拆成 37 个镜头', id:'updates', k:'访谈 剪辑 37 镜头'},
+    {t:'夜班车：18 分钟单场景剧情短片', id:'deep', k:'剧情短片 夜班车 陈末'},
+    {t:'蓝色循环：7 分钟无声逐帧动画', id:'picks', k:'动画 无声 逐帧'},
+    {t:'低照度手持实拍：三台机器的对照测试', id:'guide', k:'测评 低照度 噪点'},
+    {t:'十月校园放映记录：五场、共 318 名观众', id:'news', k:'放映 校园 观众'},
+    {t:'分类入口：十个内容频道', id:'channels', k:'频道 分类 入口'},
+    {t:'深度解析：失效播放源的 11 天与存活率', id:'deep', k:'失效 存活率 转存'},
+    {t:'体验指南：从检索到播放的五步', id:'guide', k:'步骤 播放 720P'},
+    {t:'常见问答：播放源标签颜色含义', id:'faq', k:'问答 标签 颜色'},
+    {t:'用户评论：条目页短评摘录', id:'comments', k:'评论 短评 反馈'},
+    {t:'相关资讯：影展与内核更新', id:'news', k:'资讯 影展 内核 3.4.1'},
+    {t:'相关推荐：词条聚合入口', id:'recommend', k:'推荐 词条 标签'},
+    {t:'本周热度与校对时间线', id:'ranking', k:'榜单 热度 时间线'},
+    {t:'观看路径取舍：追作者还是追频道', id:'compare', k:'作者 频道 取舍'}
+  ];
+
+  function renderResults(q){
+    if (!feedback) { return; }
+    var key = q.trim().toLowerCase();
+    if (!key) { feedback.classList.remove('show'); feedback.innerHTML = ''; return; }
+    var hits = index.filter(function(item){
+      return (item.t + ' ' + item.k).toLowerCase().indexOf(key) !== -1;
+    }).slice(0, 7);
+    if (!hits.length) {
+      feedback.innerHTML = '<div class="sr-empty">没有找到与“' + escapeHtml(q) + '”相关的条目，换个频道名或作品名试试。</div>';
+    } else {
+      feedback.innerHTML = hits.map(function(item){
+        return '<a class="sr-item" href="/#' + item.id + '">' + escapeHtml(item.t) + '</a>';
+      }).join('');
+    }
+    feedback.classList.add('show');
+  }
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  if (input) {
+    input.addEventListener('input', function(){ renderResults(input.value); });
+    input.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') { input.value = ''; renderResults(''); }
+    });
+    document.addEventListener('click', function(e){
+      if (!e.target.closest('.search-box')) { feedback.classList.remove('show'); }
+    });
+  }
+
+  onScroll();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "小蓝gtv网站",
+  "description": "围绕独立影像、访谈与纪录短片的目录型导航站点，按频道归类并标注播放源可用性。",
+  "inLanguage": "zh-CN"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "播放源标签的三种颜色分别代表什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "蓝色指作者自发布，灰色指用户转存，橙色指镜像。转存源依赖中间账号，账号注销后链接即失效，因此标注待校对。镜像源偶有清晰度降级，播放前可看信息栏确认分辨率。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "条目时长和播放器显示不一致，以哪个为准？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "以片尾字幕为准。条目字段由校对时逐条核对，播放器时长可能因片头广告被剪短。差值在 5 秒内视为正常，超过 30 秒会在备注里写明原因。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "安卓手机播放 HEVC 编码条目卡顿怎么办？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "内核 3.4.1 在安卓 12 以下对 HEVC 走软解，1080P 容易掉帧。把清晰度降到 720P 通常可解，或改用支持硬解的第三方播放器。桌面浏览器无此限制。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么同一部片有多个条目？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多为版本差异：导演剪辑版、影展放映版、网络发布版时长不同。目录以片尾字幕和片头标识区分，同一事件不会跨条目重复计入统计。遇到重复条目可提交合并。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "校对日期多久更新一次？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "常规条目每两周集中校对一批。11月8日批次覆盖纪录片与访谈频道 14 条，修正 1 条失效源。超过 14 天未校对的条目会在列表里加提示。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "无声条目怎么识别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "条目页有“无声”标签，动画实验频道里占比最高，全站在架无声条目占 9%。播放前无需调低音量，但部分无声条目在片尾附有文字说明，需看完整片长。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+                                              </html>
