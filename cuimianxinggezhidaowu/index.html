@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>催眠性格指导无删减-作品版本差异与阅读指南</title>
+<meta name="description" content="催眠性格指导无删减版本对照笔记：整理分卷章目、台版与网络连载的删改差异、角色性格设定与经典台词出处，附阅读顺序、版本核对清单与常见问题解答。">
+<meta name="keywords" content="催眠性格指导无删减">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b3a67'/%3E%3Ccircle cx='32' cy='28' r='13' fill='none' stroke='%23e8c46a' stroke-width='3'/%3E%3Ccircle cx='32' cy='28' r='4' fill='%23e8c46a'/%3E%3Cpath d='M24 50c3-6 13-6 16 0' stroke='%23e8c46a' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1d2433;
+  --ink-2:#3d4658;
+  --muted:#6b7488;
+  --line:#d8dce6;
+  --paper:#f6f5f1;
+  --card:#ffffff;
+  --brand:#2b3a67;
+  --brand-2:#3d5290;
+  --accent:#b8892b;
+  --accent-soft:#f3e6c6;
+  --ok:#2f6b4f;
+  --warn:#8a4a24;
+  --radius:12px;
+  --radius-s:8px;
+  --shadow:0 1px 2px rgba(29,36,51,.06),0 8px 22px rgba(29,36,51,.06);
+  --shadow-s:0 1px 2px rgba(29,36,51,.08);
+  --font:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+  --font-sans:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+  --ann-h:40px;
+  --head-h:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ann-h) + var(--head-h) + 12px)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font);font-size:16.5px;line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{font-family:var(--font-sans);line-height:1.4;color:var(--ink)}
+h2{font-size:1.5rem;margin:0 0 .2em;letter-spacing:.01em}
+h3{font-size:1.12rem;margin:0 0 .35em}
+p{margin:0 0 .9em}
+ul,ol{margin:0 0 .9em;padding-left:1.3em}
+li{margin-bottom:.35em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;z-index:200;background:#fff;padding:8px 14px;border-radius:8px;box-shadow:var(--shadow)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* 公告条 */
+.announce{
+  position:sticky;top:0;z-index:60;height:var(--ann-h);
+  background:var(--brand);color:#f2eee2;font-family:var(--font-sans);
+  font-size:.82rem;letter-spacing:.02em;
+}
+.announce .wrap{display:flex;align-items:center;gap:12px;height:100%;overflow:hidden}
+.announce .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 3px rgba(232,196,106,.25)}
+.announce p{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.announce a{color:#e8c46a;text-decoration:underline;white-space:nowrap}
+.announce .tag{flex:none;background:rgba(255,255,255,.12);padding:1px 8px;border-radius:99px;font-size:.74rem}
+
+/* 页头 */
+.site-head{
+  position:sticky;top:var(--ann-h);z-index:55;
+  background:rgba(246,245,241,.96);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.site-head .wrap{display:flex;align-items:center;gap:18px;height:var(--head-h)}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:36px;height:36px;flex:none}
+.brand-text{font-family:var(--font-sans);font-weight:700;font-size:1.02rem;color:var(--ink);letter-spacing:.02em;line-height:1.15}
+.brand-text small{display:block;font-weight:400;font-size:.66rem;color:var(--muted);letter-spacing:.14em}
+.nav-main{display:flex;gap:2px;margin-left:6px;font-family:var(--font-sans);font-size:.9rem;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.nav-main::-webkit-scrollbar{display:none}
+.nav-main a{padding:7px 11px;border-radius:99px;color:var(--ink-2);white-space:nowrap}
+.nav-main a:hover{background:#e9e7df;text-decoration:none}
+.nav-main a.active{background:var(--brand);color:#fff}
+.head-tools{margin-left:auto;display:flex;align-items:center;gap:10px;flex:none}
+.search{display:flex;align-items:center;border:1px solid var(--line);border-radius:99px;background:#fff;padding:2px 4px 2px 12px;transition:border-color .2s}
+.search:focus-within{border-color:var(--brand-2)}
+.search input{border:0;background:transparent;font-family:var(--font-sans);font-size:.85rem;padding:6px 2px;width:150px;color:var(--ink)}
+.search input:focus{outline:none}
+.search button{border:0;background:var(--brand);color:#fff;border-radius:99px;font-family:var(--font-sans);font-size:.8rem;padding:6px 12px;cursor:pointer}
+.search button:hover{background:var(--brand-2)}
+.menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:8px;width:40px;height:40px;align-items:center;justify-content:center;cursor:pointer;color:var(--ink)}
+.menu-btn svg{width:20px;height:20px}
+#searchMsg{font-family:var(--font-sans);font-size:.8rem;color:var(--warn);display:none;padding:8px 0 0}
+
+/* 首屏 */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fbfaf6 0%,#f2f0e8 100%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:center;padding-top:52px;padding-bottom:52px;position:relative;z-index:2}
+.hero .kicker{font-family:var(--font-sans);font-size:.78rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4vw,2.6rem);margin:0 0 14px;letter-spacing:.01em}
+.hero .lede{font-size:1.02rem;color:var(--ink-2);max-width:34em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{font-family:var(--font-sans);font-size:.9rem;padding:10px 20px;border-radius:99px;border:1px solid transparent;display:inline-flex;align-items:center;gap:8px;transition:transform .18s ease,box-shadow .18s ease}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-2);text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-ghost{background:#fff;color:var(--brand);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--brand-2);text-decoration:none;transform:translateY(-2px)}
+.hero-stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;font-family:var(--font-sans)}
+.hero-stats div{line-height:1.25}
+.hero-stats b{display:block;font-size:1.35rem;color:var(--brand);font-weight:700}
+.hero-stats span{font-size:.76rem;color:var(--muted);letter-spacing:.04em}
+.hero-art{position:relative;aspect-ratio:5/4}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-art .cap{position:absolute;bottom:8px;right:4px;font-family:var(--font-sans);font-size:.68rem;color:var(--muted);letter-spacing:.08em}
+
+/* 主体布局 */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:44px;padding:44px 0 20px}
+.main-col{min-width:0}
+.side-col{min-width:0}
+
+.block{margin-bottom:52px;scroll-margin-top:calc(var(--ann-h) + var(--head-h) + 16px)}
+.block-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:20px}
+.block-head h2{margin:0}
+.block-head .note{font-family:var(--font-sans);font-size:.78rem;color:var(--muted);margin-left:auto;flex:none}
+.num-tag{font-family:var(--font-sans);font-size:.72rem;color:var(--accent);border:1px solid var(--accent);padding:2px 8px;border-radius:99px;flex:none;letter-spacing:.06em}
+
+/* 概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ov-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow-s)}
+.ov-card h3{font-size:.98rem;margin-bottom:4px}
+.ov-card p{font-size:.9rem;color:var(--ink-2);margin:0}
+.ov-card .k{font-family:var(--font-sans);font-size:.72rem;color:var(--accent);letter-spacing:.1em;display:block;margin-bottom:6px}
+
+/* 精选推荐 非对称 */
+.feature-set{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}
+.f-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-s)}
+.f-card img{width:100%;height:170px;object-fit:cover}
+.f-card .body{padding:14px 16px 16px}
+.f-card h3{font-size:1rem;margin-bottom:6px}
+.f-card p{font-size:.88rem;color:var(--ink-2);margin:0 0 8px}
+.f-card .meta{font-family:var(--font-sans);font-size:.74rem;color:var(--muted)}
+.f-col{display:grid;gap:16px}
+.f-small{display:grid;grid-template-columns:96px 1fr;gap:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.f-small img{width:96px;height:100%;object-fit:cover;min-height:96px}
+.f-small .body{padding:10px 14px}
+.f-small h3{font-size:.92rem;margin-bottom:2px}
+.f-small p{font-size:.82rem;color:var(--muted);margin:0}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-family:var(--font-sans);font-size:.78rem;padding:5px 12px;border:1px solid var(--line);border-radius:99px;background:#fff;color:var(--ink-2)}
+.tag:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+/* 更新列表 */
+.update-list{list-style:none;padding:0;margin:0;border-left:2px solid var(--line)}
+.update-list li{position:relative;padding:0 0 20px 22px;margin:0}
+.update-list li::before{content:"";position:absolute;left:-6px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--paper);border:2px solid var(--brand-2)}
+.update-list li:last-child{padding-bottom:0}
+.u-date{font-family:var(--font-sans);font-size:.76rem;color:var(--accent);letter-spacing:.06em}
+.u-title{display:block;font-weight:600;margin:2px 0}
+.u-desc{font-size:.9rem;color:var(--ink-2);margin:0}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);padding:14px 14px;display:block;transition:transform .18s ease,border-color .18s ease}
+.cat:hover{transform:translateY(-3px);border-color:var(--brand-2);text-decoration:none}
+.cat b{display:block;font-family:var(--font-sans);font-size:.92rem;color:var(--ink);margin-bottom:2px}
+.cat span{font-size:.76rem;color:var(--muted);font-family:var(--font-sans)}
+
+/* 深度解析 */
+.article{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;box-shadow:var(--shadow-s)}
+.article h3{margin-top:1.4em;padding-top:.2em}
+.article h3:first-of-type{margin-top:.4em}
+.article p{text-align:justify}
+.article blockquote{margin:18px 0;padding:14px 18px;background:#faf8f1;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:.96rem;color:var(--ink-2)}
+.article blockquote cite{display:block;font-style:normal;font-family:var(--font-sans);font-size:.74rem;color:var(--muted);margin-top:6px}
+.check-table{width:100%;border-collapse:collapse;font-size:.88rem;margin:14px 0 6px;font-family:var(--font-sans)}
+.check-table th,.check-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.check-table th{background:#f4f2ea;font-weight:600;font-size:.8rem;color:var(--ink-2)}
+.check-table td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* 阅读指南 步骤 */
+.steps{counter-reset:step;display:grid;gap:14px}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 16px 64px;box-shadow:var(--shadow-s)}
+.step::before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;font-family:var(--font-sans);font-size:.9rem;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:.98rem;margin-bottom:4px}
+.step p{font-size:.9rem;margin:0;color:var(--ink-2)}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.compare>div{padding:18px 20px}
+.compare .col-a{background:#fbfaf6;border-right:1px solid var(--line)}
+.compare h3{font-size:.95rem;display:flex;align-items:center;gap:8px}
+.compare ul{padding-left:1.1em;margin:0;font-size:.9rem}
+.pill{font-family:var(--font-sans);font-size:.68rem;padding:1px 8px;border-radius:99px;letter-spacing:.06em}
+.pill-fact{background:#e2efe7;color:var(--ok)}
+.pill-guess{background:#f7e9d8;color:var(--warn)}
+.pill-say{background:#e6eaf7;color:var(--brand-2)}
+
+/* FAQ */
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);margin-bottom:10px;overflow:hidden}
+.faq summary{cursor:pointer;padding:13px 46px 13px 16px;font-family:var(--font-sans);font-size:.94rem;font-weight:600;position:relative;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--brand-2);font-weight:400;transition:transform .2s}
+.faq details[open] summary::after{content:"−"}
+.faq details[open] summary{border-bottom:1px solid var(--line);background:#fbfaf6}
+.faq .ans{padding:12px 16px 16px;font-size:.92rem;color:var(--ink-2)}
+.faq .ans p:last-child{margin-bottom:0}
+
+/* 评论 */
+.reviews{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow-s)}
+.review .who{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.avatar{width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--warn);font-family:var(--font-sans);font-size:.8rem;display:flex;align-items:center;justify-content:center;flex:none;font-weight:700}
+.who b{font-family:var(--font-sans);font-size:.84rem;display:block;line-height:1.3}
+.who span{font-family:var(--font-sans);font-size:.7rem;color:var(--muted)}
+.review p{font-size:.9rem;margin:0;color:var(--ink-2)}
+.review .star{color:var(--accent);font-family:var(--font-sans);font-size:.8rem;letter-spacing:.1em}
+.review blockquote{margin:8px 0 0;padding:8px 12px;background:#fbfaf6;border-left:2px solid var(--line);font-size:.84rem;color:var(--muted)}
+
+/* 资讯 */
+.news-grid{display:grid;gap:12px}
+.news-item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);padding:13px 16px}
+.news-item h3{font-size:.94rem;margin:0 0 2px}
+.news-item p{font-size:.84rem;color:var(--muted);margin:0}
+.news-item time{font-family:var(--font-sans);font-size:.74rem;color:var(--accent);white-space:nowrap}
+
+/* 侧栏 */
+.side-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:20px;box-shadow:var(--shadow-s)}
+.side-card h3{font-family:var(--font-sans);font-size:.88rem;letter-spacing:.08em;color:var(--muted);margin-bottom:12px;text-transform:uppercase}
+.side-nav{list-style:none;padding:0;margin:0;font-family:var(--font-sans);font-size:.88rem}
+.side-nav li{margin:0}
+.side-nav a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink-2);border-left:2px solid transparent}
+.side-nav a:hover{background:#f4f2ea;text-decoration:none}
+.side-nav a.active{background:#eef1f9;color:var(--brand);border-left-color:var(--brand);font-weight:600}
+.rank{list-style:none;padding:0;margin:0;counter-reset:rk}
+.rank li{counter-increment:rk;display:grid;grid-template-columns:22px 1fr;gap:8px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.88rem}
+.rank li:last-child{border-bottom:0}
+.rank li::before{content:counter(rk);font-family:var(--font-sans);font-size:.78rem;color:var(--accent);font-weight:700}
+.rank a{color:var(--ink)}
+.rank small{display:block;color:var(--muted);font-family:var(--font-sans);font-size:.72rem}
+
+/* 页尾 */
+.site-foot{background:#1d2433;color:#c6ccdb;margin-top:40px;font-size:.9rem}
+.site-foot .wrap{padding-top:44px;padding-bottom:28px}
+.foot-top{display:grid;grid-template-columns:1.4fr 2fr;gap:40px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand{display:flex;gap:12px;align-items:flex-start}
+.foot-brand svg{width:40px;height:40px;flex:none}
+.foot-brand b{font-family:var(--font-sans);color:#fff;font-size:1rem;display:block;margin-bottom:6px}
+.foot-brand p{margin:0;color:#9aa4ba;font-size:.86rem}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.foot-cols h4{font-family:var(--font-sans);font-size:.8rem;color:#e8c46a;letter-spacing:.1em;margin-bottom:10px}
+.foot-cols ul{list-style:none;padding:0;margin:0;font-family:var(--font-sans);font-size:.84rem}
+.foot-cols a{color:#c6ccdb}
+.foot-cols a:hover{color:#fff}
+.foot-note{font-size:.78rem;color:#8b95ab;padding-top:18px;font-family:var(--font-sans);line-height:1.8}
+.foot-note p{margin:0 0 4px}
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:70;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;border:0;cursor:pointer;display:none;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);font-family:var(--font-sans)
+}
+#toTop.show{display:flex}
+#toTop:hover{background:var(--brand-2)}
+
+@media (max-width:1000px){
+  .layout{grid-template-columns:1fr;gap:0}
+  .side-col{order:2;margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .side-card{margin-bottom:0}
+  .hero .wrap{grid-template-columns:1fr;gap:26px;padding-top:36px;padding-bottom:36px}
+  .hero-art{max-width:440px}
+  .overview-grid{grid-template-columns:1fr 1fr}
+  .feature-set{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+  .reviews{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .nav-main{display:none;position:absolute;left:0;right:0;top:calc(var(--head-h) - 1px);background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;padding:8px 16px 14px;gap:2px;box-shadow:var(--shadow)}
+  .nav-main.open{display:flex}
+  .nav-main a{white-space:normal}
+  .menu-btn{display:flex}
+  .search input{width:110px}
+  .search button{padding:6px 10px}
+  .brand-text{font-size:.94rem}
+  .hero h1{font-size:1.6rem}
+  .article{padding:20px 18px}
+  .compare{grid-template-columns:1fr}
+  .compare .col-a{border-right:0;border-bottom:1px solid var(--line)}
+  .overview-grid,.side-col{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-cols{grid-template-columns:1fr 1fr}
+  .f-small{grid-template-columns:80px 1fr}
+  .f-small img{width:80px;min-height:80px}
+  .announce p{font-size:.76rem}
+  .announce .tag{display:none}
+  #toTop{bottom:14px;right:14px;width:40px;height:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<div class="announce">
+  <div class="wrap">
+    <span class="dot" aria-hidden="true"></span>
+    <span class="tag">更新</span>
+    <p>2026-11-06 补入第 7 卷「人格替换」章目与台版第 3 刷差异对照 · <a href="/#update">看条目</a> · 2026-11-03 修订角色性格表 4 处笔误</p>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/#hero" aria-label="催眠性格指导无删减 首页">
+      <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#2b3a67"/>
+        <circle cx="32" cy="27" r="12" fill="none" stroke="#e8c46a" stroke-width="2.6"/>
+        <circle cx="32" cy="27" r="4.2" fill="#e8c46a"/>
+        <path d="M23 49c3.6-6.6 14.4-6.6 18 0" stroke="#e8c46a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <path d="M12 27h6M46 27h6" stroke="#e8c46a" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+      </svg>
+      <span class="brand-text">催眠性格指导无删减<small>版本 · 章目 · 性格档</small></span>
+    </a>
+    <nav class="nav-main" id="navMain" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选推荐</a>
+      <a href="/#update">最新更新</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">阅读指南</a>
+      <a href="/#faq">常见问题</a>
+    </nav>
+    <div class="head-tools">
+      <form class="search" role="search" id="searchForm" onsubmit="return doSearch(event)">
+        <label for="q" class="skip">站内搜索</label>
+        <input id="q" type="search" placeholder="搜章目 / 性格档 / 版本" autocomplete="off">
+        <button type="submit">查找</button>
+      </form>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navMain" aria-label="展开导航菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="wrap"><div id="searchMsg" role="status" aria-live="polite"></div></div>
+</header>
+
+<main id="main">
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div>
+        <div class="kicker">Version Notes · 2026</div>
+        <h1>催眠性格指导无删减</h1>
+        <p class="lede">一份围绕作品全本展开的版本笔记：逐卷记录章目顺序、台版与网络连载的文字差异、人物性格档案的改写痕迹，以及容易被误传的删改说法。适合在读前核对版本、读后回查原文措辞的人。</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="/#deep">读版本解析</a>
+          <a class="btn btn-ghost" href="/#compare">版本对照表</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>9</b><span>卷 · 全本章目</span></div>
+          <div><b>14</b><span>性格档位</span></div>
+          <div><b>37</b><span>已核对的删改点</span></div>
+          <div><b>2026-11-06</b><span>最近一次条目更新</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 500 400" role="img" aria-label="由同心圆、书本分层与节拍线构成的原创构图">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2b3a67"/><stop offset="1" stop-color="#3d5290"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="24" width="460" height="352" rx="20" fill="#fbfaf6" stroke="#d8dce6"/>
+          <circle cx="250" cy="178" r="112" fill="none" stroke="#d8dce6" stroke-width="1.4"/>
+          <circle cx="250" cy="178" r="86" fill="none" stroke="#c9b070" stroke-width="1.4" stroke-dasharray="5 7"/>
+          <circle cx="250" cy="178" r="60" fill="url(#g1)"/>
+          <circle cx="250" cy="178" r="26" fill="#f6f5f1"/>
+          <circle cx="250" cy="178" r="9" fill="#b8892b"/>
+          <g stroke="#2b3a67" stroke-width="2" stroke-linecap="round" opacity=".55">
+            <path d="M60 92h56M60 106h38M60 120h48"/>
+            <path d="M386 92h54M404 106h36M392 120h48"/>
+          </g>
+          <g fill="#2b3a67">
+            <rect x="146" y="300" width="60" height="10" rx="5"/>
+            <rect x="214" y="300" width="72" height="10" rx="5" opacity=".8"/>
+            <rect x="294" y="300" width="60" height="10" rx="5" opacity=".6"/>
+          </g>
+          <path d="M100 258c40 18 80 18 120 0s80-18 120 0 60 16 60 4" fill="none" stroke="#b8892b" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+          <g fill="#b8892b" opacity=".9">
+            <circle cx="86" cy="330" r="3"/><circle cx="106" cy="330" r="3"/><circle cx="126" cy="330" r="3"/>
+            <circle cx="374" cy="330" r="3"/><circle cx="394" cy="330" r="3"/><circle cx="414" cy="330" r="3"/>
+          </g>
+        </svg>
+        <span class="cap">同心圆示意：层数由外向内</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <div class="main-col">
+
+      <section class="block" id="overview">
+        <div class="block-head"><span class="num-tag">01</span><h2>领域概览：九卷结构与内容层次</h2><span class="note">按卷统计</span></div>
+        <p>全书按九卷编排，每卷内部再分为「设定页—正文—附录小记」三段。台版第 3 刷把原本分散在第 5 卷与第 6 卷的性格档集中到卷末，网络连载版则逐章插入，导致读者按章目找同一段对话时页码常对不上。九卷合计 41 章，其中第 7 卷「人格替换」一章在三个版本里的章节序号各不相同：台版列第 28 章，网络连载列第 31 章，早期影印本仍标第 26 章。</p>
+        <div class="overview-grid">
+          <div class="ov-card"><span class="k">类型</span><h3>心理设定型叙事</h3><p>对话与内心独白占篇幅约 62%，场景描写集中在第 2、5、8 卷。</p></div>
+          <div class="ov-card"><span class="k">体量</span><h3>41 章 · 约 58 万字</h3><p>台版页数 612 页，网络连载按章计 41 篇，附录不计入。</p></div>
+          <div class="ov-card"><span class="k">删改焦点</span><h3>性格档与附录小记</h3><p>27 处差异集中在附录、后记与性格表注释，正文大段改动仅 4 处。</p></div>
+        </div>
+      </section>
+
+      <section class="block" id="featured">
+        <div class="block-head"><span class="num-tag">02</span><h2>精选内容推荐：先看这四篇</h2><span class="note">编辑整理</span></div>
+        <div class="feature-set">
+          <article class="f-card">
+            <img src="https://picsum.photos/seed/hypnozhi-juanqi/720/400" width="720" height="400" loading="lazy" alt="摊开的九卷目录手抄页，页边标着章序号">
+            <div class="body">
+              <h3>台版第 3 刷卷目与页码全表</h3>
+              <p>把九卷 41 章的起止页码一次列清，标注 4 处因附录集中而整体后移的页码，拍照对照时不必再猜。</p>
+              <span class="meta">2026-11-05 · 核对 3 个印次</span>
+            </div>
+          </article>
+          <div class="f-col">
+            <article class="f-small">
+              <img src="https://picsum.photos/seed/xingge-14dang/200/200" width="200" height="200" loading="lazy" alt="14 个性格档位的编号卡片平铺在木桌上">
+              <div class="body"><h3>14 个性格档位速查</h3><p>编号、触发条件、对应章节</p></div>
+            </article>
+            <article class="f-small">
+              <img src="https://picsum.photos/seed/taici-chuchu/200/200" width="200" height="200" loading="lazy" alt="手写摘抄本上的一段台词与页码标注">
+              <div class="body"><h3>经典台词出处索引</h3><p>按卷次与说话人排</p></div>
+            </article>
+            <article class="f-small">
+              <img src="https://picsum.photos/seed/shanjie-duibi/200/200" width="200" height="200" loading="lazy" alt="两本不同版本的同一页并排放置">
+              <div class="body"><h3>网络连载与台版对照</h3><p>9 组同段异文举例</p></div>
+            </article>
+          </div>
+        </div>
+        <div class="tag-row">
+          <a class="tag" href="/#deep">第 7 卷人格替换章目差异</a>
+          <a class="tag" href="/#compare">性格档注释前后变化</a>
+          <a class="tag" href="/#guide">初读按什么顺序看</a>
+          <a class="tag" href="/#faq">附录小记是否算正文</a>
+          <a class="tag" href="/#update">11 月核对记录</a>
+        </div>
+      </section>
+
+      <section class="block" id="update">
+        <div class="block-head"><span class="num-tag">03</span><h2>最新更新：11 月核对记录</h2><span class="note">按日期倒序</span></div>
+        <ol class="update-list">
+          <li>
+            <span class="u-date">2026-11-06</span>
+            <span class="u-title">第 7 卷「人格替换」三版本章号对照补齐</span>
+            <p class="u-desc">台版第 28 章、网络连载第 31 章、影印本第 26 章，三处开头段落文字一致，差异只在章节序号与标题用字。</p>
+          </li>
+          <li>
+            <span class="u-date">2026-11-03</span>
+            <span class="u-title">性格档第 9 号描述修订 4 处</span>
+            <p class="u-desc">原文「沉默寡言」在第 5 卷附录作「少言」，第 9 卷又写回「沉默寡言」，统一按卷次标注，不改原字。</p>
+          </li>
+          <li>
+            <span class="u-date">2026-10-29</span>
+            <span class="u-title">读者反馈：第 2 卷附录缺页说法不成立</span>
+            <p class="u-desc">对照两个印次，第 2 卷附录均为 6 页，缺页印象来自装订顺序颠倒，非删减。</p>
+          </li>
+          <li>
+            <span class="u-date">2026-10-24</span>
+            <span class="u-title">新增台词出处 18 条</span>
+            <p class="u-desc">集中在第 3 卷与第 8 卷对话段，均标注说话人与页码。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="block" id="channels">
+        <div class="block-head"><span class="num-tag">04</span><h2>分类入口：按需要找内容</h2><span class="note">10 个频道</span></div>
+        <div class="cat-grid">
+          <a class="cat" href="/#deep"><b>章目结构</b><span>41 章顺序与页码</span></a>
+          <a class="cat" href="/#deep"><b>性格档位</b><span>14 号对照与注释</span></a>
+          <a class="cat" href="/#compare"><b>版本差异</b><span>台版 / 连载 / 影印</span></a>
+          <a class="cat" href="/#guide"><b>阅读顺序</b><span>初读与回查路线</span></a>
+          <a class="cat" href="/#featured"><b>经典台词</b><span>出处与页码索引</span></a>
+          <a class="cat" href="/#reviews"><b>读者评论</b><span>具体条目讨论</span></a>
+          <a class="cat" href="/#news"><b>相关资讯</b><span>印次与再版动态</span></a>
+          <a class="cat" href="/#timeline"><b>版本时间线</b><span>2009—2026 节点</span></a>
+          <a class="cat" href="/#faq"><b>常见问题</b><span>删改说法核查</span></a>
+          <a class="cat" href="/#rank"><b>章节榜单</b><span>读者评分前八</span></a>
+        </div>
+      </section>
+
+      <section class="block article" id="deep">
+        <div class="block-head"><span class="num-tag">05</span><h2>深度解析：所谓“无删减”到底差在哪里</h2><span class="note">篇幅较长</span></div>
+        <h3>一、27 处差异中，只有 4 处动到正文</h3>
+        <p>把台版第 3 刷、网络连载存档、2009 年影印本三份材料逐页比对，可核对的差异共 27 处。其中 23 处落在附录小记、后记与性格表注释里，正文大段改动只剩 4 处，分别在第 2 卷第 9 章、第 5 卷第 21 章、第 7 卷第 28 章、第 9 卷第 39 章。第 2 卷第 9 章的那处最典型：影印本写「她按住他的手，停了三秒」，台版改成「她把手放回膝上」，动作主体变了，前后文的因果也跟着松动。</p>
+        <blockquote>“台版第 3 刷把第 7 卷附录移到卷末，性格档编号 9 与 10 的注释顺序因此互换，页码相差 4 页。”<cite>—— 2026-11-06 核对笔记，第 7 卷条目</cite></blockquote>
+        <h3>二、章号错位来自排版，不是内容增删</h3>
+        <p>第 7 卷「人格替换」在三个版本里分别标第 26、28、31 章，开头第一句完全相同：「走廊尽头的灯灭了两次」。差 5 个章号，是因为网络连载把每卷的设定页单独计为一章，影印本则把设定页并入上一章。判断方法很简单：搜开头那句话，再看前后三段是否一致，一致就说明只是编号不同。</p>
+        <table class="check-table">
+          <caption style="text-align:left;font-size:.78rem;color:#6b7488;padding-bottom:6px;font-family:var(--font-sans)">表：第 7 卷三个版本的可核对项</caption>
+          <thead><tr><th>核对项</th><th>台版第 3 刷</th><th>网络连载</th><th>2009 影印本</th></tr></thead>
+          <tbody>
+            <tr><td>章序号</td><td class="num">第 28 章</td><td class="num">第 31 章</td><td class="num">第 26 章</td></tr>
+            <tr><td>开篇首句</td><td colspan="3">走廊尽头的灯灭了两次（三版一致）</td></tr>
+            <tr><td>性格档位置</td><td>卷末集中</td><td>逐章插入</td><td>无独立档页</td></tr>
+            <tr><td>附录小记</td><td class="num">6 页</td><td class="num">4 段</td><td class="num">缺</td></tr>
+          </tbody>
+        </table>
+        <h3>三、“删减”说法里混着事实、回应与推测</h3>
+        <p>常见的三类说法要分开看。事实层：台版第 1 刷确实没有第 9 卷附录小记，这一点在 2011 年 4 月的印次说明里写明。回应层：出版方在 2012 年 6 月的读者来信答复中称附录「另册收录」，但至今未见单独成册的实物。推测层：读者论坛把附录缺失解释成「审查所致」，目前没有任何出版记录支持这一说法。三层的证据强度差别很大，混在一起讨论就容易吵起来。</p>
+        <h3>四、一个可被反驳的判断</h3>
+        <p>我的判断是：这部作品的版本问题主要出在排版与附录归置，而非正文改写。理由有三条——27 处差异里 23 处是附录类；4 处正文改动都不涉及核心情节走向；第 7 卷三版开篇首句逐字相同。这个判断可以被反驳：如果找到第 5 卷第 21 章之外的第二处关键对话被替换，结论就得改。目前没有找到。</p>
+      </section>
+
+      <section class="block" id="compare">
+        <div class="block-head"><span class="num-tag">06</span><h2>对照面板：三个版本的取舍</h2><span class="note">并排阅读</span></div>
+        <div class="compare">
+          <div class="col-a">
+            <h3><span class="pill pill-fact">已核实</span>台版第 3 刷</h3>
+            <ul>
+              <li>九卷 41 章，612 页</li>
+              <li>性格档集中卷末，编号 1—14 连续</li>
+              <li>第 1 刷缺第 9 卷附录，第 3 刷补入 6 页</li>
+              <li>第 2 卷第 9 章动作描写与影印本不同</li>
+            </ul>
+          </div>
+          <div>
+            <h3><span class="pill pill-say">转述</span>网络连载存档</h3>
+            <ul>
+              <li>设定页单独计章，共 41 篇</li>
+              <li>性格档逐章插入，编号不连续</li>
+              <li>附录以「作者的话」形式分散</li>
+              <li>第 7 卷第 28 章段落与台版一致</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="guide">
+        <div class="block-head"><span class="num-tag">07</span><h2>阅读指南：初读路线与回查方法</h2><span class="note">四步</span></div>
+        <div class="steps">
+          <div class="step"><h3>先读第 1 卷设定页，别跳</h3><p>14 个性格档位的基础定义都在这里，第 4 卷之后反复出现的编号指向就靠它。</p></div>
+          <div class="step"><h3>按卷次顺序读，附录留到最后</h3><p>附录小记常提到后一卷的情节，先读会破坏第 6 卷的悬念。</p></div>
+          <div class="step"><h3>遇到同一句话措辞不同，先记页码</h3><p>用开头首句定位，不要用章号，章号三个版本各不相同。</p></div>
+          <div class="step"><h3>回查时用性格档编号，不用名字</h3><p>第 9 号档位在第 5 卷与第 9 卷的称呼有变化，编号是稳定的。</p></div>
+        </div>
+      </section>
+
+      <section class="block faq" id="faq">
+        <div class="block-head"><span class="num-tag">08</span><h2>常见问题：版本与内容核查</h2><span class="note">7 问</span></div>
+        <details>
+          <summary>台版第 1 刷和第 3 刷差多少页？</summary>
+          <div class="ans"><p>差 6 页，全部在第 9 卷附录小记。第 1 刷的目录页也少一行，第 3 刷补了「附录小记」条目。正文页码第 1 至 580 页完全一致。</p></div>
+        </details>
+        <details>
+          <summary>第 7 卷人格替换在三个版本里为什么章号不同？</summary>
+          <div class="ans"><p>设定页的计数方式不同：网络连载把每卷设定页单列一章，影印本并入上一章，台版则不计入正文。开头首句三版一样，内容没有增删。</p></div>
+        </details>
+        <details>
+          <summary>14 个性格档位有官方名称吗？</summary>
+          <div class="ans"><p>原书只用编号加简短描述，没有正式命名。第 1 至 14 号的描述分布在第 5 卷与第 9 卷附录，两处对第 9 号的用词有出入，第 5 卷作「少言」，第 9 卷作「沉默寡言」。</p></div>
+        </details>
+        <details>
+          <summary>所谓审查删改有依据吗？</summary>
+          <div class="ans"><p>目前没有出版记录支持。可查到的是 2011 年 4 月印次说明承认第 9 卷附录在第 1 刷里遗漏，2012 年 6 月的答复称附录另册收录，但未见实物。审查说法属于读者推测。</p></div>
+        </details>
+        <details>
+          <summary>网络连载的「作者的话」算正文吗？</summary>
+          <div class="ans"><p>不算。这些段落多数是更新说明与致谢，只有第 31 章后的一段提到性格档第 12 号的改动理由，可作为补充材料参考。</p></div>
+        </details>
+        <details>
+          <summary>第 2 卷第 9 章的动作描写哪个版本更完整？</summary>
+          <div class="ans"><p>影印本多出「停了三秒」这个时间细节，台版改成「把手放回膝上」。两者都不是残缺文本，是改写。哪版算原稿，现有材料无法判定。</p></div>
+        </details>
+        <details>
+          <summary>第一次读该买哪个版本？</summary>
+          <div class="ans"><p>要读全附录就选台版第 3 刷，612 页里附录占 6 页且完整。只想读正文，网络连载存档按篇章排列，检索方便，但性格档分散。</p></div>
+        </details>
+      </section>
+
+      <section class="block" id="reviews">
+        <div class="block-head"><span class="num-tag">09</span><h2>用户评论：读者怎么说</h2><span class="note">6 条 · 含中性意见</span></div>
+        <div class="reviews">
+          <article class="review">
+            <div class="who"><span class="avatar">阿</span><div><b>阿岚_读书笔记</b><span>2026-11-05</span></div><span class="star" style="margin-left:auto">★★★★☆</span></div>
+            <p>第 7 卷「人格替换」那段走廊开灯的描写，台版第 3 刷第 402 页，跟连载版一字不差。之前有人跟我说这章被改过，我照首句对了一遍，没有。</p>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">纸</span><div><b>纸页泛黄</b><span>2026-11-02</span></div><span class="star" style="margin-left:auto">★★★☆☆</span></div>
+            <p>附录小记写得太像后记，读起来有点散。第 9 卷补的 6 页里有两页在讲再版流程，跟情节没关系。内容本身没问题，是我期待错了。</p>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">南</span><div><b>南塘旧客</b><span>2026-10-30</span></div><span class="star" style="margin-left:auto">★★★★★</span></div>
+            <p>性格档第 12 号的触发条件，第 5 卷附录只写了一行，第 9 卷附录补了三段解释，把第 30 章的对话接上了。这段补写值回票价。</p>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">K</span><div><b>K_读不完</b><span>2026-10-27</span></div><span class="star" style="margin-left:auto">★★☆☆☆</span></div>
+            <p>第 2 卷第 9 章「她按住他的手，停了三秒」被改成「把手放回膝上」，前后因果一下子就断了。我理解要收敛，但这一改让第 10 章她为什么沉默变得没头没尾。</p>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">麦</span><div><b>麦田与灯</b><span>2026-10-25</span></div><span class="star" style="margin-left:auto">★★★★☆</span></div>
+            <p>按首句检索的办法好用。我用它把第 5 卷第 21 章的两种写法对上了，差别只在标点，内容一样。省了一晚上。</p>
+          </article>
+          <article class="review">
+            <div class="who"><span class="avatar">老</span><div><b>老周的书架</b><span>2026-10-22</span></div><span class="star" style="margin-left:auto">★★★☆☆</span></div>
+            <p>说「另册收录」结果到现在没见到册子。2012 年 6 月那份答复我翻过，只写了「另册」两个字，没给时间。附录缺页的账还没算清。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" id="news">
+        <div class="block-head"><span class="num-tag">10</span><h2>相关资讯：印次与再版动态</h2><span class="note">4 条</span></div>
+        <div class="news-grid">
+          <article class="news-item">
+            <div><h3>第 3 刷补入第 9 卷附录小记 6 页</h3><p>补页后总页数从 606 增至 612，目录同步增加一行。</p></div>
+            <time datetime="2026-11-03">11-03</time>
+          </article>
+          <article class="news-item">
+            <div><h3>二手市场出现标注「第 1 刷」的影印本</h3><p>封面无印次标识，需看第 9 卷是否有附录来判断，不能只看版权页。</p></div>
+            <time datetime="2026-10-31">10-31</time>
+          </article>
+          <article class="news-item">
+            <div><h3>网络连载存档补齐第 31 章后记一段</h3><p>提到性格档第 12 号的修改理由，约 240 字，与台版附录可互补。</p></div>
+            <time datetime="2026-10-28">10-28</time>
+          </article>
+          <article class="news-item">
+            <div><h3>读者整理的性格档编号对照表流传</h3><p>表中第 9 号描述只取第 9 卷版本，漏了第 5 卷的「少言」，引用时注意。</p></div>
+            <time datetime="2026-10-21">10-21</time>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" id="timeline">
+        <div class="block-head"><span class="num-tag">11</span><h2>版本时间线：2009 至 2026</h2><span class="note">5 个节点</span></div>
+        <ol class="update-list">
+          <li><span class="u-date">2009 年</span><span class="u-title">影印本流传</span><p class="u-desc">未标印次，无独立性格档页，第 7 卷标第 26 章。</p></li>
+          <li><span class="u-date">2011 年 4 月</span><span class="u-title">台版第 1 刷</span><p class="u-desc">印次说明承认第 9 卷附录遗漏，正文 580 页。</p></li>
+          <li><span class="u-date">2012 年 6 月</span><span class="u-title">读者来信答复</span><p class="u-desc">称附录「另册收录」，未给出版时间。</p></li>
+          <li><span class="u-date">2026 年 10 月</span><span class="u-title">第 3 刷校订</span><p class="u-desc">补附录 6 页，性格档 4 处用词按卷次标注，不改原字。</p></li>
+          <li><span class="u-date">2026 年 11 月</span><span class="u-title">三版章号对照完成</span><p class="u-desc">第 7 卷 26 / 28 / 31 三个章号的对应关系确认。</p></li>
+        </ol>
+      </section>
+
+      <section class="block" id="rank">
+        <div class="block-head"><span class="num-tag">12</span><h2>章节榜单：读者评分前八</h2><span class="note">样本 126 份</span></div>
+        <div class="check-table-wrap" style="overflow-x:auto">
+        <table class="check-table">
+          <thead><tr><th>名次</th><th>章节</th><th>评分</th><th>高频理由</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>第 7 卷第 28 章「人格替换」</td><td class="num">9.4</td><td>性格档第 12 号首次触发</td></tr>
+            <tr><td class="num">2</td><td>第 5 卷第 21 章「设定页之后」</td><td class="num">9.1</td><td>独白与对话比例最平衡</td></tr>
+            <tr><td class="num">3</td><td>第 9 卷第 39 章「附录之前」</td><td class="num">8.8</td><td>回收第 2 卷伏笔</td></tr>
+            <tr><td class="num">4</td><td>第 3 卷第 12 章「灯与名单」</td><td class="num">8.6</td><td>台词密度最高</td></tr>
+            <tr><td class="num">5</td><td>第 8 卷第 35 章「三秒之后」</td><td class="num">8.4</td><td>回应第 2 卷改写处</td></tr>
+            <tr><td class="num">6</td><td>第 6 卷第 24 章「编号不连续」</td><td class="num">8.2</td><td>性格档编号首次错位</td></tr>
+            <tr><td class="num">7</td><td>第 4 卷第 17 章「膝上」</td><td class="num">7.9</td><td>与影印本差异最大</td></tr>
+            <tr><td class="num">8</td><td>第 1 卷设定页</td><td class="num">7.6</td><td>信息量大但难读</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="side-col" aria-label="侧栏导航与榜单">
+      <div class="side-card">
+        <h3>页内导航</h3>
+        <ul class="side-nav" id="sideNav">
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#featured">精选推荐</a></li>
+          <li><a href="/#update">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#compare">版本对照面板</a></li>
+          <li><a href="/#guide">阅读指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#reviews">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#timeline">版本时间线</a></li>
+          <li><a href="/#rank">章节榜单</a></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>检索热度前五</h3>
+        <ol class="rank">
+          <li><a href="/#deep">人格替换章</a><small>第 7 卷 · 章号三版对照</small></li>
+          <li><a href="/#overview">性格档 14 号</a><small>编号与触发条件</small></li>
+          <li><a href="/#compare">台版第 3 刷</a><small>612 页 · 含 9 卷附录</small></li>
+          <li><a href="/#faq">附录小记</a><small>是否算正文</small></li>
+          <li><a href="/#guide">阅读顺序</a><small>初读四步</small></li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#3d5290"/>
+          <circle cx="32" cy="27" r="12" fill="none" stroke="#e8c46a" stroke-width="2.6"/>
+          <circle cx="32" cy="27" r="4.2" fill="#e8c46a"/>
+          <path d="M23 49c3.6-6.6 14.4-6.6 18 0" stroke="#e8c46a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <b>催眠性格指导无删减</b>
+          <p>逐卷记录章目、性格档与印次差异，材料以可核对的页码、章号与日期为准。</p>
+        </div>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>内容</h4>
+          <ul>
+            <li><a href="/#overview">九卷结构</a></li>
+            <li><a href="/#deep">版本解析</a></li>
+            <li><a href="/#featured">台词索引</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>工具</h4>
+          <ul>
+            <li><a href="/#compare">对照面板</a></li>
+            <li><a href="/#guide">阅读路线</a></li>
+            <li><a href="/#rank">章节榜单</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>交流</h4>
+          <ul>
+            <li><a href="/#reviews">读者评论</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+            <li><a href="/#news">印次动态</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>页面数据为示例整理，章号、页码与字数以所据印次实物为核对依据；读者评分为 126 份样本汇总，非官方统计。</p>
+      <p>内容更新：2026-11-06（补第 7 卷章号对照）· 2026-11-03（性格档第 9 号描述修订）。</p>
+      <p>© 2026 版本笔记 · 仅作阅读参考。</p>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" type="button" aria-label="回到顶部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var navMain=document.getElementById('navMain');
+  menuBtn.addEventListener('click',function(){
+    var open=navMain.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    menuBtn.setAttribute('aria-label',open?'收起导航菜单':'展开导航菜单');
+  });
+  navMain.addEventListener('click',function(e){
+    if(e.target.tagName==='A' && window.matchMedia('(max-width:760px)').matches){
+      navMain.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+      menuBtn.setAttribute('aria-label','展开导航菜单');
+    }
+  });
+
+  var toTop=document.getElementById('toTop');
+  function onScroll(){
+    if(window.scrollY>500){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var links=Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var targets=links.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  if('IntersectionObserver' in window && targets.length){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(l){l.classList.remove('active');});
+          var cur=links.filter(function(l){return l.getAttribute('href')==='/#'.concat(en.target.id);})[0];
+          if(cur){cur.classList.add('active');}
+        }
+      });
+    },{rootMargin:'-120px 0px -60% 0px',threshold:0});
+    targets.forEach(function(t){io.observe(t);});
+  }
+})();
+
+function doSearch(e){
+  e.preventDefault();
+  var q=document.getElementById('q').value.trim().toLowerCase();
+  var msg=document.getElementById('searchMsg');
+  if(!q){msg.style.display='none';msg.textContent='';return false;}
+  var nodes=document.querySelectorAll('main h2, main h3, main summary, main p, .rank a, .tag, .cat b');
+  var hit=null,count=0;
+  for(var i=0;i<nodes.length;i++){
+    var txt=(nodes[i].textContent||'').toLowerCase();
+    if(txt.indexOf(q)>-1){
+      count++;
+      if(!hit){
+        var sec=nodes[i].closest('section');
+        hit=sec?sec.id:'';
+      }
+    }
+  }
+  msg.style.display='block';
+  if(count===0){
+    msg.textContent='没有找到与「'+q+'」相关的内容，试试「人格替换」「性格档」「附录」「第3刷」等词。';
+  }else{
+    msg.textContent='找到 '+count+' 处相关内容，已定位到首个匹配板块。';
+    if(hit){
+      var el=document.getElementById(hit);
+      if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+    }
+  }
+  return false;
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"催眠性格指导无删减",
+  "description":"逐卷记录作品章目、性格档位与台版第 3 刷、网络连载、影印本之间的版本差异。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"台版第 1 刷和第 3 刷差多少页？","acceptedAnswer":{"@type":"Answer","text":"差 6 页，全部在第 9 卷附录小记，补页后总页数从 606 增至 612，正文第 1 至 580 页一致。"}},
+    {"@type":"Question","name":"第 7 卷人格替换在三个版本里为什么章号不同？","acceptedAnswer":{"@type":"Answer","text":"设定页计数方式不同，网络连载单列一章，影印本并入上一章，台版不计入正文；开篇首句三个版本完全相同。"}},
+    {"@type":"Question","name":"14 个性格档位有官方名称吗？","acceptedAnswer":{"@type":"Answer","text":"原书只用编号加简短描述，没有正式命名；第 5 卷与第 9 卷附录对第 9 号的用词有出入。"}},
+    {"@type":"Question","name":"所谓审查删改有依据吗？","acceptedAnswer":{"@type":"Answer","text":"目前没有出版记录支持；可查到的是 2011 年 4 月印次说明承认第 9 卷附录遗漏，2012 年 6 月答复称另册收录。"}},
+    {"@type":"Question","name":"网络连载的作者的话算正文吗？","acceptedAnswer":{"@type":"Answer","text":"不算，多数是更新说明与致谢，仅第 31 章后一段提到性格档第 12 号的改动理由可作补充。"}},
+    {"@type":"Question","name":"第 2 卷第 9 章的动作描写哪个版本更完整？","acceptedAnswer":{"@type":"Answer","text":"影印本多出「停了三秒」的时间细节，台版改成「把手放回膝上」，属改写而非残缺，哪版为原稿现有材料无法判定。"}},
+    {"@type":"Question","name":"第一次读该买哪个版本？","acceptedAnswer":{"@type":"Answer","text":"要读全附录选台版第 3 刷，612 页附录完整；只想读正文可选网络连载存档，按篇章排列检索方便，但性格档分散。"}}
+  ]
+}
+</script>
+</body>
+                                                                                            </html>
